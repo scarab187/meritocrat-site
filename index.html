@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meritocratic Party — meritocrat.org</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { light: '#E8D48B', DEFAULT: '#C9982E', dark: '#A67B1E', darker: '#7A5A12' },
+            navy: { light: '#2A3D5E', DEFAULT: '#1A2744', dark: '#111B30' },
+            forest: { DEFAULT: '#2D5F3E', light: '#3A7A50' },
+            warm: { DEFAULT: '#F8F6F1', dark: '#EDE9E0' },
+            ink: '#1C1C1C',
+          },
+          fontFamily: {
+            display: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --gold: #C9982E;
+      --gold-light: #E8D48B;
+      --gold-dark: #A67B1E;
+      --navy: #1A2744;
+      --navy-light: #2A3D5E;
+      --ink: #1C1C1C;
+      --warm-bg: #F8F6F1;
+      --forest: #2D5F3E;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .overline {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .overline-light {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .gold-underline {
+      display: inline-block;
+      position: relative;
+    }
+    .gold-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .hero-pulse {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: pulse-line 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-line {
+      0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-card {
+      border-top: 3px solid var(--gold);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .plank-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-left: 4px solid var(--gold);
+    }
+    .plank-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .pillar-item {
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .doc-item {
+      transition: background 0.2s ease;
+    }
+    .doc-item:hover {
+      background: var(--warm-bg);
+    }
+
+    .nav-scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      background: rgba(26, 39, 68, 0.98) !important;
+    }
+
+    .seedling-icon {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(201, 152, 46, 0.3);
+      border-color: var(--gold);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      padding: 0.875rem 2rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      padding: 0.875rem 2rem;
+      border-radius: 6px;
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: #fff; color: var(--navy); transform: translateY(-1px); }
+
+    .feature-grid-item {
+      transition: transform 0.2s ease;
+    }
+    .feature-grid-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .callout-box {
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 2rem;
+      background: rgba(201, 152, 46, 0.04);
+    }
+
+    .wa-feature {
+      border: 1px solid rgba(201, 152, 46, 0.25);
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .wa-feature:hover {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+    }
+
+    @media (max-width: 767px) {
+      .hero-heading { font-size: 1.75rem !important; }
+    }
+  </style>
+</head>
+<body data-id="0" class="bg-white">
+  <app-icon data-id="1" hidden data-icon="landmark" data-palette="Yellow"></app-icon>
+
+  <!-- STICKY NAVIGATION -->
+  <header data-id="2" id="navbar-a1b2" class="fixed top-0 left-0 right-0 z-50 bg-navy transition-all duration-300">
+    <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <a data-id="4" href="#hero-c3d4" class="flex items-center gap-2 text-white font-bold text-lg tracking-wide no-underline">
+        <svg data-id="5" class="seedling-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path data-id="6" d="M14 26V14" stroke="#C9982E" stroke-width="2.5" stroke-linecap="round"/>
+          <path data-id="7" d="M14 18C14 18 8 16 6 11C6 11 10 9 14 14" stroke="#C9982E" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path data-id="8" d="M14 14C14 14 20 12 22 7C22 7 18 5 14 10" stroke="#C9982E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span data-id="9">MERITOCRATIC PARTY</span>
+      </a>
+      <nav data-id="10" id="desktop-nav-e5f6" class="hidden md:flex items-center gap-6">
+        <a data-id="11" href="#crisis-g7h8" class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">The Crisis</a>
+        <a data-id="12" href="#solution-i9j0" class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">The Solution</a>
+        <a data-id="13" href="#platform-k1l2" class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">Platform</a>
+        <a data-id="14" href="#policy-m3n4" class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">Policy Package</a>
+        <a data-id="15" href="#about-o5p6" class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">About</a>
+        <a data-id="16" href="#involved-q7r8" class="bg-gold text-navy font-bold text-sm px-4 py-2 rounded hover:bg-gold-dark transition-colors no-underline">Get Involved</a>
+      </nav>
+      <button data-id="17" id="mobile-menu-btn-s9t0" class="md:hidden p-2 text-white" aria-label="Open menu">
+        <i data-id="18" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <nav data-id="19" id="mobile-menu-u1v2" class="hidden fixed inset-0 bg-navy z-[60] flex flex-col p-6">
+    <div data-id="20" class="flex items-center justify-between mb-10">
+      <span data-id="21" class="text-white font-bold text-lg tracking-wide">MERITOCRATIC PARTY</span>
+      <button data-id="22" id="mobile-menu-close-w3x4" class="p-2 text-white" aria-label="Close menu">
+        <i data-id="23" data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div data-id="24" class="flex flex-col gap-5">
+      <a data-id="25" href="#crisis-g7h8" class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">The Crisis</a>
+      <a data-id="26" href="#solution-i9j0" class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">The Solution</a>
+      <a data-id="27" href="#platform-k1l2" class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">Platform</a>
+      <a data-id="28" href="#policy-m3n4" class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">Policy Package</a>
+      <a data-id="29" href="#about-o5p6" class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">About</a>
+      <a data-id="30" href="#involved-q7r8" class="mobile-nav-link bg-gold text-navy font-bold text-xl px-5 py-3 rounded text-center hover:bg-gold-dark transition-colors no-underline mt-4">Get Involved</a>
+    </div>
+  </nav>
+
+  <main data-id="31">
+    <!-- HERO SECTION -->
+    <section data-id="32" id="hero-c3d4" class="relative min-h-screen flex items-center justify-center bg-navy text-white px-4 md:px-6 pt-16">
+      <div data-id="33" class="max-w-4xl mx-auto text-center py-16 md:py-20">
+        <h1 data-id="34" class="hero-heading text-3xl md:text-5xl lg:text-6xl font-bold text-gold leading-tight mb-6" style="line-height:1.15">
+          If You Create the Value,<br data-id="35">You Own the Asset.
+        </h1>
+        <p data-id="36" id="hero-sub-y5z6" class="text-lg md:text-xl text-white/85 max-w-3xl mx-auto mb-4 leading-relaxed">
+          The Meritocratic Party builds ownership infrastructure for the intangible economy — so the people who create value share in the wealth their contributions produce.
+        </p>
+        <p data-id="37" id="hero-date-a7b8" class="text-white/50 text-sm tracking-widest uppercase mb-10">
+          Founded in Washington State · May 2026
+        </p>
+        <div data-id="38" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a data-id="39" href="#platform-k1l2" class="btn-gold min-w-[200px] text-center">Read the Platform</a>
+          <a data-id="40" href="#involved-q7r8" class="btn-outline min-w-[200px] text-center">Get Involved</a>
+        </div>
+      </div>
+      <div data-id="41" class="hero-pulse"></div>
+    </section>
+
+    <!-- THE CRISIS SECTION -->
+    <section data-id="42" id="crisis-g7h8" class="py-16 md:py-24 px-4 md:px-6" style="background: var(--warm-bg);">
+      <div data-id="43" class="max-w-6xl mx-auto">
+        <div data-id="44" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="45" class="overline">THE PROBLEM</p>
+          <h2 data-id="46" id="crisis-heading-c9d0" class="text-2xl md:text-4xl font-bold text-ink gold-underline">The Largest Pool of Dead Capital in Human History</h2>
+        </div>
+        <div data-id="47" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+          <div data-id="48" class="stat-card bg-white rounded-lg p-6 md:p-8 shadow-sm animate-on-scroll">
+            <p data-id="49" class="text-4xl md:text-5xl font-bold text-gold mb-3">90%</p>
+            <p data-id="50" class="text-ink/80 text-sm md:text-base leading-relaxed">of S&amp;P 500 market value is intangible assets — ideas, data, expertise, IP — yet most have no liquid market, no standardized valuation, and no tradeable instrument.</p>
+            <p data-id="51" class="text-xs text-ink/40 mt-4 uppercase tracking-wider">Source: Ocean Tomo</p>
+          </div>
+          <div data-id="52" class="stat-card bg-white rounded-lg p-6 md:p-8 shadow-sm animate-on-scroll">
+            <p data-id="53" class="text-4xl md:text-5xl font-bold text-gold mb-3">92 Million</p>
+            <p data-id="54" class="text-ink/80 text-sm md:text-base leading-relaxed">jobs will be displaced by AI by 2030. Workers' accumulated expertise is extracted to train automated systems — without ownership compensation.</p>
+            <p data-id="55" class="text-xs text-ink/40 mt-4 uppercase tracking-wider">Source: WEF Future of Jobs Report 2025</p>
+          </div>
+          <div data-id="56" class="stat-card bg-white rounded-lg p-6 md:p-8 shadow-sm animate-on-scroll">
+            <p data-id="57" class="text-4xl md:text-5xl font-bold text-gold mb-3">$74+ Trillion</p>
+            <p data-id="58" class="text-ink/80 text-sm md:text-base leading-relaxed">in global intangible asset value sits as "dead capital" — intellectual property without the ownership infrastructure that stocks gave to the industrial economy.</p>
+            <p data-id="59" class="text-xs text-ink/40 mt-4 uppercase tracking-wider">Source: WIPO</p>
+          </div>
+        </div>
+        <div data-id="60" class="max-w-4xl mx-auto animate-on-scroll">
+          <p data-id="61" id="crisis-body-e1f2" class="text-ink/75 text-base md:text-lg leading-relaxed text-center">
+            The 20th century built infrastructure to own physical things — deeds for land, titles for cars, stock certificates for corporate shares. The 21st century economy runs on intangible assets, but we have built <strong data-id="62" class="text-ink">no equivalent ownership infrastructure</strong> for the people who create that value. The Meritocratic Party changes that.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SOLUTION SECTION -->
+    <section data-id="63" id="solution-i9j0" class="py-16 md:py-24 px-4 md:px-6 bg-white">
+      <div data-id="64" class="max-w-6xl mx-auto">
+        <div data-id="65" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="66" class="overline">THE SOLUTION</p>
+          <h2 data-id="67" id="solution-heading-g3h4" class="text-2xl md:text-4xl font-bold text-ink gold-underline mb-4">Provenance-Backed Securities</h2>
+          <p data-id="68" class="text-ink/65 text-base md:text-lg max-w-3xl mx-auto mt-6">A new class of digital financial instrument that lets creators own, value, and trade the intangible assets they produce.</p>
+        </div>
+        <div data-id="69" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-14 md:mb-16">
+          <div data-id="70" class="text-center feature-grid-item animate-on-scroll">
+            <div data-id="71" class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+              <svg data-id="72" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path data-id="73" d="M8 16h4M20 16h4M14 12l4 4-4 4M18 12l-4 4 4 4" stroke="#C9982E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect data-id="74" x="3" y="10" width="10" height="12" rx="2" stroke="#C9982E" stroke-width="2"/>
+                <rect data-id="75" x="19" y="10" width="10" height="12" rx="2" stroke="#C9982E" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 data-id="76" class="text-lg font-bold text-ink mb-2">Provenance Ledger</h3>
+            <p data-id="77" class="text-ink/65 text-sm leading-relaxed">An immutable record of who created what. Every contribution is documented, verified, and cryptographically secured — establishing clear ownership chains for intangible assets.</p>
+          </div>
+          <div data-id="78" class="text-center feature-grid-item animate-on-scroll">
+            <div data-id="79" class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+              <svg data-id="80" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <polyline data-id="81" points="4,24 10,16 16,20 22,10 28,14" stroke="#C9982E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle data-id="82" cx="10" cy="16" r="2" fill="#C9982E"/>
+                <circle data-id="83" cx="16" cy="20" r="2" fill="#C9982E"/>
+                <circle data-id="84" cx="22" cy="10" r="2" fill="#C9982E"/>
+                <circle data-id="85" cx="28" cy="14" r="2" fill="#C9982E"/>
+              </svg>
+            </div>
+            <h3 data-id="86" class="text-lg font-bold text-ink mb-2">Performance Oracle</h3>
+            <p data-id="87" class="text-ink/65 text-sm leading-relaxed">Real-world performance data — crop yields, streaming revenue, patent citations, clinical outcomes — verified by independent systems. PBS values are anchored to measurable results, not speculation.</p>
+          </div>
+          <div data-id="88" class="text-center feature-grid-item animate-on-scroll">
+            <div data-id="89" class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+              <svg data-id="90" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path data-id="91" d="M20 8l4 4-4 4" stroke="#C9982E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path data-id="92" d="M12 24l-4-4 4-4" stroke="#C9982E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path data-id="93" d="M24 12H14a4 4 0 0 0-4 4v0" stroke="#C9982E" stroke-width="2" stroke-linecap="round"/>
+                <path data-id="94" d="M8 20h10a4 4 0 0 0 4-4v0" stroke="#C9982E" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 data-id="95" class="text-lg font-bold text-ink mb-2">Exchange Protocol</h3>
+            <p data-id="96" class="text-ink/65 text-sm leading-relaxed">Open marketplace infrastructure for listing, pricing, and trading PBS. For the first time, a farmer's seed genetics, an artist's catalog, or a worker's expertise can be traded as liquid securities.</p>
+          </div>
+        </div>
+        <div data-id="97" class="callout-box max-w-4xl mx-auto animate-on-scroll">
+          <h3 data-id="98" id="seedbid-heading-i5j6" class="text-xl font-bold text-ink mb-3 flex items-center gap-2">
+            <svg data-id="99" class="seedling-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;">
+              <path data-id="100" d="M14 26V14" stroke="#2D5F3E" stroke-width="2.5" stroke-linecap="round"/>
+              <path data-id="101" d="M14 18C14 18 8 16 6 11C6 11 10 9 14 14" stroke="#2D5F3E" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path data-id="102" d="M14 14C14 14 20 12 22 7C22 7 18 5 14 10" stroke="#2D5F3E" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+            SeedBid — Proof of Concept
+          </h3>
+          <p data-id="103" class="text-ink/75 text-sm md:text-base leading-relaxed mb-3">
+            The framework isn't theoretical. SeedBid (U.S. Patent Application No. 64/048,095) demonstrates Provenance-Backed Securities in the agricultural genetic IP market — a $77–93 billion sector where 4 companies control roughly two-thirds of the global commercial seed market. SeedBid gives independent breeders a liquid exchange for their genetic innovations.
+          </p>
+          <p data-id="104" class="text-ink/40 text-xs">Invented by Joseph Richard Harmon, Mill Creek, Washington</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY WASHINGTON FIRST -->
+    <section data-id="105" id="washington-k7l8" class="py-16 md:py-24 px-4 md:px-6 bg-navy text-white">
+      <div data-id="106" class="max-w-6xl mx-auto">
+        <div data-id="107" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="108" class="overline-light">WASHINGTON STATE</p>
+          <h2 data-id="109" id="wa-heading-m9n0" class="text-2xl md:text-4xl font-bold gold-underline mb-4">The Delaware of the Intangible Economy</h2>
+          <p data-id="110" class="text-white/60 text-base md:text-lg max-w-3xl mx-auto mt-6">Delaware defined corporate law for the 20th century. Washington can define intangible asset ownership for the 21st.</p>
+        </div>
+        <div data-id="111" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div data-id="112" class="wa-feature animate-on-scroll">
+            <div data-id="113" class="flex items-start gap-4">
+              <div data-id="114" class="flex-shrink-0 mt-1">
+                <i data-id="115" data-lucide="cpu" class="w-6 h-6 text-gold"></i>
+              </div>
+              <div data-id="116">
+                <h3 data-id="117" class="font-bold text-lg mb-1">Innovation Economy</h3>
+                <p data-id="118" class="text-white/65 text-sm leading-relaxed">Home to Microsoft, Amazon, Boeing, and thousands of tech companies generating world-leading IP.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="119" class="wa-feature animate-on-scroll">
+            <div data-id="120" class="flex items-start gap-4">
+              <div data-id="121" class="flex-shrink-0 mt-1">
+                <i data-id="122" data-lucide="wheat" class="w-6 h-6 text-gold"></i>
+              </div>
+              <div data-id="123">
+                <h3 data-id="124" class="font-bold text-lg mb-1">Agricultural Powerhouse</h3>
+                <p data-id="125" class="text-white/65 text-sm leading-relaxed">$10.6 billion agricultural sector — immediate SeedBid deployment for seed genetics, hops, apples, and wheat.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="126" class="wa-feature animate-on-scroll">
+            <div data-id="127" class="flex items-start gap-4">
+              <div data-id="128" class="flex-shrink-0 mt-1">
+                <i data-id="129" data-lucide="badge-dollar-sign" class="w-6 h-6 text-gold"></i>
+              </div>
+              <div data-id="130">
+                <h3 data-id="131" class="font-bold text-lg mb-1">No Income Tax</h3>
+                <p data-id="132" class="text-white/65 text-sm leading-relaxed">PBS transaction fees create a new revenue stream without income taxation — diversifying Washington's tax base.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="133" class="wa-feature animate-on-scroll">
+            <div data-id="134" class="flex items-start gap-4">
+              <div data-id="135" class="flex-shrink-0 mt-1">
+                <i data-id="136" data-lucide="graduation-cap" class="w-6 h-6 text-gold"></i>
+              </div>
+              <div data-id="137">
+                <h3 data-id="138" class="font-bold text-lg mb-1">Research Infrastructure</h3>
+                <p data-id="139" class="text-white/65 text-sm leading-relaxed">UW and WSU provide world-class research capacity for performance oracle development and validation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PLATFORM -->
+    <section data-id="140" id="platform-k1l2" class="py-16 md:py-24 px-4 md:px-6" style="background: var(--warm-bg);">
+      <div data-id="141" class="max-w-5xl mx-auto">
+        <div data-id="142" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="143" class="overline">THE PLATFORM</p>
+          <h2 data-id="144" id="platform-heading-o1p2" class="text-2xl md:text-4xl font-bold text-ink gold-underline">Twelve Planks for the Ownership Economy</h2>
+        </div>
+        <div data-id="145" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+          <div data-id="146" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="147" class="flex items-start gap-4">
+              <span data-id="148" class="text-2xl font-bold text-gold flex-shrink-0 w-8">1</span>
+              <div data-id="149">
+                <h3 data-id="150" class="font-bold text-ink mb-1">Provenance-Backed Securities Act</h3>
+                <p data-id="151" class="text-ink/60 text-sm">Pass state and federal legislation creating the legal framework for tokenizing intangible assets.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="152" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="153" class="flex items-start gap-4">
+              <span data-id="154" class="text-2xl font-bold text-gold flex-shrink-0 w-8">2</span>
+              <div data-id="155">
+                <h3 data-id="156" class="font-bold text-ink mb-1">Worker Expertise Ownership</h3>
+                <p data-id="157" class="text-ink/60 text-sm">Every worker owns their provenance-documented expertise — employers cannot require waiver as a condition of employment.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="158" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="159" class="flex items-start gap-4">
+              <span data-id="160" class="text-2xl font-bold text-gold flex-shrink-0 w-8">3</span>
+              <div data-id="161">
+                <h3 data-id="162" class="font-bold text-ink mb-1">AI Training Royalties</h3>
+                <p data-id="163" class="text-ink/60 text-sm">When your expertise trains an AI system, you retain an ownership interest and receive compensation.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="164" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="165" class="flex items-start gap-4">
+              <span data-id="166" class="text-2xl font-bold text-gold flex-shrink-0 w-8">4</span>
+              <div data-id="167">
+                <h3 data-id="168" class="font-bold text-ink mb-1">The SeedBid Initiative</h3>
+                <p data-id="169" class="text-ink/60 text-sm">Launch the first PBS exchange for agricultural genetic IP, breaking monopoly pricing in the seed market.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="170" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="171" class="flex items-start gap-4">
+              <span data-id="172" class="text-2xl font-bold text-gold flex-shrink-0 w-8">5</span>
+              <div data-id="173">
+                <h3 data-id="174" class="font-bold text-ink mb-1">Creative Ownership Infrastructure</h3>
+                <p data-id="175" class="text-ink/60 text-sm">Performance-verified securities for musicians, artists, game developers, and writers.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="176" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="177" class="flex items-start gap-4">
+              <span data-id="178" class="text-2xl font-bold text-gold flex-shrink-0 w-8">6</span>
+              <div data-id="179">
+                <h3 data-id="180" class="font-bold text-ink mb-1">Data Sovereignty</h3>
+                <p data-id="181" class="text-ink/60 text-sm">Your personal data is your property — own, control, and trade it with full provenance transparency.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="182" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="183" class="flex items-start gap-4">
+              <span data-id="184" class="text-2xl font-bold text-gold flex-shrink-0 w-8">7</span>
+              <div data-id="185">
+                <h3 data-id="186" class="font-bold text-ink mb-1">Open Research Ownership</h3>
+                <p data-id="187" class="text-ink/60 text-sm">Scientists retain ownership stakes in publicly funded discoveries.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="188" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="189" class="flex items-start gap-4">
+              <span data-id="190" class="text-2xl font-bold text-gold flex-shrink-0 w-8">8</span>
+              <div data-id="191">
+                <h3 data-id="192" class="font-bold text-ink mb-1">Manufacturing Expertise Preservation</h3>
+                <p data-id="193" class="text-ink/60 text-sm">Factory workers' process knowledge is documented, owned, and compensated.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="194" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="195" class="flex items-start gap-4">
+              <span data-id="196" class="text-2xl font-bold text-gold flex-shrink-0 w-8">9</span>
+              <div data-id="197">
+                <h3 data-id="198" class="font-bold text-ink mb-1">Regulatory Sandbox Innovation</h3>
+                <p data-id="199" class="text-ink/60 text-sm">Controlled testing environments for new financial instruments before full regulation.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="200" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="201" class="flex items-start gap-4">
+              <span data-id="202" class="text-2xl font-bold text-gold flex-shrink-0 w-8">10</span>
+              <div data-id="203">
+                <h3 data-id="204" class="font-bold text-ink mb-1">Meritocratic Education</h3>
+                <p data-id="205" class="text-ink/60 text-sm">Teach financial literacy, IP ownership, and provenance documentation in schools.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="206" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="207" class="flex items-start gap-4">
+              <span data-id="208" class="text-2xl font-bold text-gold flex-shrink-0 w-8">11</span>
+              <div data-id="209">
+                <h3 data-id="210" class="font-bold text-ink mb-1">Anti-Monopoly in Intangible Markets</h3>
+                <p data-id="211" class="text-ink/60 text-sm">PBS exchanges create price discovery and competition against corporate concentration.</p>
+              </div>
+            </div>
+          </div>
+          <div data-id="212" class="plank-card bg-white rounded-lg p-5 animate-on-scroll">
+            <div data-id="213" class="flex items-start gap-4">
+              <span data-id="214" class="text-2xl font-bold text-gold flex-shrink-0 w-8">12</span>
+              <div data-id="215">
+                <h3 data-id="216" class="font-bold text-ink mb-1">International Leadership</h3>
+                <p data-id="217" class="text-ink/60 text-sm">The United States sets the global standard for intangible asset ownership.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE POLICY PACKAGE -->
+    <section data-id="218" id="policy-m3n4" class="py-16 md:py-24 px-4 md:px-6 bg-white">
+      <div data-id="219" class="max-w-4xl mx-auto">
+        <div data-id="220" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="221" class="overline">THE WORK IS DONE</p>
+          <h2 data-id="222" id="policy-heading-q3r4" class="text-2xl md:text-4xl font-bold text-ink gold-underline mb-4">Seven Documents. Ready for Olympia.</h2>
+          <p data-id="223" class="text-ink/65 text-base md:text-lg max-w-3xl mx-auto mt-6">The Meritocratic Policy Package includes everything needed to introduce legislation in the 2027 Washington State Legislative Session.</p>
+        </div>
+        <div data-id="224" class="space-y-3 mb-10">
+          <div data-id="225" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="226" class="flex-shrink-0 mt-0.5">
+              <i data-id="227" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="228">
+              <h3 data-id="229" class="font-bold text-ink mb-0.5">Executive Policy Summary</h3>
+              <p data-id="230" class="text-ink/55 text-sm">The crisis, the solution, and the case for Washington first.</p>
+            </div>
+          </div>
+          <div data-id="231" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="232" class="flex-shrink-0 mt-0.5">
+              <i data-id="233" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="234">
+              <h3 data-id="235" class="font-bold text-ink mb-0.5">Budget &amp; Legal Justification</h3>
+              <p data-id="236" class="text-ink/55 text-sm">Fiscal analysis, constitutional authority, and regulatory pathway.</p>
+            </div>
+          </div>
+          <div data-id="237" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="238" class="flex-shrink-0 mt-0.5">
+              <i data-id="239" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="240">
+              <h3 data-id="241" class="font-bold text-ink mb-0.5">Washington State Bill</h3>
+              <p data-id="242" class="text-ink/55 text-sm">Full legislative text for the Washington Provenance-Backed Securities Act.</p>
+            </div>
+          </div>
+          <div data-id="243" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="244" class="flex-shrink-0 mt-0.5">
+              <i data-id="245" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="246">
+              <h3 data-id="247" class="font-bold text-ink mb-0.5">Federal Bill</h3>
+              <p data-id="248" class="text-ink/55 text-sm">National Provenance-Backed Securities Framework Act for Congress.</p>
+            </div>
+          </div>
+          <div data-id="249" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="250" class="flex-shrink-0 mt-0.5">
+              <i data-id="251" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="252">
+              <h3 data-id="253" class="font-bold text-ink mb-0.5">Economic Impact Report</h3>
+              <p data-id="254" class="text-ink/55 text-sm">Market projections, job creation, and GDP contribution analysis.</p>
+            </div>
+          </div>
+          <div data-id="255" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="256" class="flex-shrink-0 mt-0.5">
+              <i data-id="257" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="258">
+              <h3 data-id="259" class="font-bold text-ink mb-0.5">Technical Appendix</h3>
+              <p data-id="260" class="text-ink/55 text-sm">Three-layer architecture specifications and implementation roadmap.</p>
+            </div>
+          </div>
+          <div data-id="261" class="doc-item flex items-start gap-4 p-4 md:p-5 rounded-lg border border-gray-100 animate-on-scroll">
+            <div data-id="262" class="flex-shrink-0 mt-0.5">
+              <i data-id="263" data-lucide="file-text" class="w-6 h-6 text-gold"></i>
+            </div>
+            <div data-id="264">
+              <h3 data-id="265" class="font-bold text-ink mb-0.5">Meritocratic Party Starter Kit</h3>
+              <p data-id="266" class="text-ink/55 text-sm">Platform, organizing guide, and messaging framework.</p>
+            </div>
+          </div>
+        </div>
+        <div data-id="267" class="text-center animate-on-scroll">
+          <p data-id="268" id="ssrn-note-s5t6" class="text-ink/50 text-sm italic max-w-2xl mx-auto">The white paper — "Provenance-Backed Securities: A Framework for Tokenizing Intangible Assets and Redistributing Ownership in the Age of Automation" — is available on SSRN.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FIVE PILLARS -->
+    <section data-id="269" id="pillars-u7v8" class="py-16 md:py-24 px-4 md:px-6 bg-navy text-white">
+      <div data-id="270" class="max-w-4xl mx-auto">
+        <div data-id="271" class="text-center mb-12 md:mb-16 animate-on-scroll">
+          <p data-id="272" class="overline-light">OUR VALUES</p>
+          <h2 data-id="273" id="pillars-heading-w9x0" class="text-2xl md:text-4xl font-bold gold-underline">The Five Pillars</h2>
+        </div>
+        <div data-id="274" class="space-y-6">
+          <div data-id="275" class="pillar-item animate-on-scroll">
+            <h3 data-id="276" class="font-bold text-lg text-gold mb-1">Contribution Earns Ownership</h3>
+            <p data-id="277" class="text-white/70 text-sm md:text-base">If you create the value, you own the asset.</p>
+          </div>
+          <div data-id="278" class="pillar-item animate-on-scroll">
+            <h3 data-id="279" class="font-bold text-lg text-gold mb-1">Empiricism Over Ideology</h3>
+            <p data-id="280" class="text-white/70 text-sm md:text-base">Policy driven by measurable outcomes, not partisan loyalty.</p>
+          </div>
+          <div data-id="281" class="pillar-item animate-on-scroll">
+            <h3 data-id="282" class="font-bold text-lg text-gold mb-1">Infrastructure, Not Redistribution</h3>
+            <p data-id="283" class="text-white/70 text-sm md:text-base">We build the roads and exchanges that let everyone participate in ownership.</p>
+          </div>
+          <div data-id="284" class="pillar-item animate-on-scroll">
+            <h3 data-id="285" class="font-bold text-lg text-gold mb-1">Technology Serves People</h3>
+            <p data-id="286" class="text-white/70 text-sm md:text-base">AI should create owners, not just unemployment.</p>
+          </div>
+          <div data-id="287" class="pillar-item animate-on-scroll">
+            <h3 data-id="288" class="font-bold text-lg text-gold mb-1">Transparency Is Non-Negotiable</h3>
+            <p data-id="289" class="text-white/70 text-sm md:text-base">Provenance is public. Performance is measured. Ownership is verifiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT THE FOUNDER -->
+    <section data-id="290" id="about-o5p6" class="py-16 md:py-24 px-4 md:px-6" style="background: var(--warm-bg);">
+      <div data-id="291" class="max-w-4xl mx-auto">
+        <div data-id="292" class="animate-on-scroll">
+          <p data-id="293" class="overline">ABOUT</p>
+          <h2 data-id="294" id="about-heading-a1b2" class="text-2xl md:text-4xl font-bold text-ink gold-underline mb-3">Joseph Richard Harmon</h2>
+          <p data-id="295" class="text-ink/50 text-sm md:text-base mb-6 mt-5">Founder, Meritocratic Party · Independent Researcher · Mill Creek, Washington</p>
+          <div data-id="296" class="bg-white rounded-lg p-6 md:p-8 border-l-4 border-gold shadow-sm">
+            <p data-id="297" id="about-bio-c3d4" class="text-ink/75 text-base md:text-lg leading-relaxed">
+              Joseph Richard Harmon is the author of the white paper "Provenance-Backed Securities: A Framework for Tokenizing Intangible Assets and Redistributing Ownership in the Age of Automation" and the inventor of SeedBid (U.S. Patent Application No. 64/048,095), the first proof-of-concept exchange for agricultural genetic intellectual property. A resident of Mill Creek, Washington, Harmon founded the Meritocratic Party on the principle that those who create value should own the assets their contributions produce.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section data-id="298" id="involved-q7r8" class="py-16 md:py-24 px-4 md:px-6 bg-gold">
+      <div data-id="299" class="max-w-3xl mx-auto">
+        <div data-id="300" class="text-center mb-10 animate-on-scroll">
+          <h2 data-id="301" id="involved-heading-e5f6" class="text-2xl md:text-4xl font-bold text-navy mb-4">Join the Movement</h2>
+          <p data-id="302" class="text-navy/75 text-base md:text-lg max-w-2xl mx-auto">The Meritocratic Party is building chapters across Washington State. Whether you're a farmer, artist, tech worker, researcher, or anyone who believes creators should own what they create — there's a place for you.</p>
+        </div>
+
+        <form data-id="303" id="signup-form-g7h8" class="bg-white rounded-xl p-6 md:p-8 shadow-lg animate-on-scroll">
+          <div data-id="304" class="space-y-4 mb-6">
+            <div data-id="305">
+              <label data-id="306" for="form-name-i9j0" class="block text-sm font-semibold text-ink mb-1.5">Name</label>
+              <input data-id="307" type="text" id="form-name-i9j0" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base text-ink placeholder-gray-400 transition-colors" placeholder="Your full name" required />
+            </div>
+            <div data-id="308">
+              <label data-id="309" for="form-email-k1l2" class="block text-sm font-semibold text-ink mb-1.5">Email</label>
+              <input data-id="310" type="email" id="form-email-k1l2" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base text-ink placeholder-gray-400 transition-colors" placeholder="your@email.com" required />
+            </div>
+            <div data-id="311">
+              <label data-id="312" for="form-role-m3n4" class="block text-sm font-semibold text-ink mb-1.5">I'm interested because I'm a...</label>
+              <select data-id="313" id="form-role-m3n4" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base text-ink bg-white transition-colors" required>
+                <option data-id="314" value="" disabled selected>Select your background</option>
+                <option data-id="315" value="farmer">Farmer / Breeder</option>
+                <option data-id="316" value="tech">Tech Worker</option>
+                <option data-id="317" value="artist">Artist / Creator</option>
+                <option data-id="318" value="researcher">Researcher</option>
+                <option data-id="319" value="entrepreneur">Entrepreneur</option>
+                <option data-id="320" value="legislator">Legislator / Policy Maker</option>
+                <option data-id="321" value="other">Other</option>
+              </select>
+            </div>
+            <div data-id="322">
+              <label data-id="323" for="form-message-o5p6" class="block text-sm font-semibold text-ink mb-1.5">Message <span data-id="324" class="font-normal text-ink/40">(optional)</span></label>
+              <textarea data-id="325" id="form-message-o5p6" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base text-ink placeholder-gray-400 resize-y transition-colors" placeholder="Tell us what brings you here..."></textarea>
+            </div>
+          </div>
+          <button data-id="326" type="submit" id="form-submit-q7r8" class="w-full bg-navy text-white font-bold text-lg py-3.5 rounded-lg hover:bg-navy-light transition-colors cursor-pointer">
+            Count Me In
+          </button>
+        </form>
+
+        <div data-id="327" id="form-success-s9t0" class="hidden bg-white rounded-xl p-8 shadow-lg text-center animate-on-scroll">
+          <div data-id="328" class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+            <i data-id="329" data-lucide="check-circle" class="w-8 h-8 text-forest"></i>
+          </div>
+          <h3 data-id="330" class="text-xl font-bold text-ink mb-2">Thank you!</h3>
+          <p data-id="331" class="text-ink/65 text-base">We'll be in touch as we build our first Washington State chapter.</p>
+        </div>
+
+        <div data-id="332" class="text-center mt-8 animate-on-scroll">
+          <p data-id="333" id="hashtags-u1v2" class="text-navy/60 text-sm font-medium tracking-wide">
+            #IfYouCreateItYouOwnIt &nbsp;&middot;&nbsp; #MeritocraticParty &nbsp;&middot;&nbsp; #ProvenanceMatters
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer data-id="334" id="footer-w3x4" class="bg-navy-dark text-white py-8 px-4 md:px-6">
+    <div data-id="335" class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <p data-id="336" class="text-white/50">&copy; 2026 Meritocratic Party · Mill Creek, Washington</p>
+      <p data-id="337" class="text-gold font-semibold tracking-wide">meritocrat.org</p>
+      <p data-id="338" class="text-white/40 italic text-center md:text-right">If you create the value, you own the asset.</p>
+    </div>
+    <div data-id="339" class="text-center mt-4">
+      <p data-id="340" class="text-white/25 text-xs">Made by Copilot</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar-a1b2');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn-s9t0');
+    const mobileMenu = document.getElementById('mobile-menu-u1v2');
+    const mobileMenuClose = document.getElementById('mobile-menu-close-w3x4');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Form submission
+    const signupForm = document.getElementById('signup-form-g7h8');
+    const formSuccess = document.getElementById('form-success-s9t0');
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById('form-name-i9j0').value,
+        email: document.getElementById('form-email-k1l2').value,
+        role: document.getElementById('form-role-m3n4').value,
+        message: document.getElementById('form-message-o5p6').value,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in localStorage
+      const submissions = JSON.parse(localStorage.getItem('meritocratic_signups') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('meritocratic_signups', JSON.stringify(submissions));
+
+      // Show success message
+      signupForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+      formSuccess.classList.add('visible');
+
+      // Re-create icons for the success checkmark
+      lucide.createIcons();
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
