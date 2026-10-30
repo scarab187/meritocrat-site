@@ -1361,103 +1361,242 @@
       </div>
     </section>
 
-    <!-- DOCUMENT 6 — TECHNICAL APPENDIX -->
-    <section id="doc-6" class="py-12 md:py-20 px-4 md:px-6 bg-warm">
-      <div class="max-w-4xl mx-auto animate-on-scroll">
-    
-        <p class="overline">DOCUMENT 6 OF 7</p>
-        <h3 class="text-2xl md:text-3xl font-bold text-ink gold-underline mb-6">
-          Technical Appendix — Provenance‑Backed Securities Architecture
-        </h3>
-    
-        <!-- Overview -->
-        <p class="text-ink/75 text-base md:text-lg leading-relaxed mb-6">
-          This appendix provides the full technical architecture for Provenance‑Backed 
-          Securities (PBS), detailing the three‑layer system — Provenance Ledger, 
-          Performance Oracle, and Exchange Protocol — that enables tokenization, 
-          valuation, and exchange of intangible assets. As the document states, PBS is 
-          “designed for compliance with existing securities law, not circumvention,” 
-          and every technical decision prioritizes auditability and regulatory integrity.
-        </p>
-    
-        <!-- Three-Layer Architecture -->
-        <h4 class="text-xl font-bold text-ink mb-3">Three‑Layer Architecture</h4>
-        <p class="text-ink/70 mb-6">
-          The architecture answers three core questions:  
-          <strong>Layer 1 — Provenance Ledger:</strong> “What is this asset, and who owns it?”  
-          <strong>Layer 2 — Performance Oracle:</strong> “What does this asset do, and how well?”  
-          <strong>Layer 3 — Exchange Protocol:</strong> “What is it worth, and how is it traded?”  
-          Each layer outputs quantitative metrics — Pd, Pr, Oy, Oc, Ds, Lm — that feed 
-          directly into the PBS valuation function.
-        </p>
-    
-        <!-- Layer 1 -->
-        <h4 class="text-xl font-bold text-ink mb-3">Layer 1 — Provenance Ledger</h4>
-        <p class="text-ink/70 mb-6">
-          The Provenance Ledger establishes immutable, cryptographically verified 
-          records of creation, authorship, contribution, and ownership. The document 
-          notes that “without a trustworthy provenance record, the entire premise of 
-          merit‑based valuation collapses.” The ledger uses a permissioned‑write, 
-          public‑read consortium blockchain model to balance regulatory compliance 
-          with public auditability.
-        </p>
-    
-        <p class="text-ink/70 mb-6">
-          Recommended platforms include Hyperledger Besu (preferred), Hyperledger 
-          Fabric, and Avalanche Subnets. Deterministic finality via IBFT 2.0 or QBFT 
-          is required for securities‑grade settlement. The appendix provides full JSON 
-          schemas for asset registration, contribution records, and ownership records.
-        </p>
-    
-        <!-- Layer 2 -->
-        <h4 class="text-xl font-bold text-ink mb-3">Layer 2 — Performance Oracle</h4>
-        <p class="text-ink/70 mb-6">
-          The Performance Oracle is the empirical engine of PBS, capturing and 
-          validating real‑world performance data. As the document states, “only 
-          measured, verified data enters the oracle — no projections, estimates, or 
-          self‑reported metrics.” Oracle operators must be independent of PBS issuers 
-          to avoid conflicts of interest.
-        </p>
-    
-        <p class="text-ink/70 mb-6">
-          The oracle network uses multi‑node aggregation, cross‑source validation, 
-          and consensus publication to ensure accuracy. Data flows from raw sources 
-          (IoT sensors, APIs, registries) through ingestion, cleaning, validation, and 
-          on‑chain publication.
-        </p>
-    
-        <!-- Layer 3 -->
-        <h4 class="text-xl font-bold text-ink mb-3">Layer 3 — Exchange Protocol</h4>
-        <p class="text-ink/70 mb-6">
-          The Exchange Protocol defines listing, pricing, trading, settlement, and 
-          liquidity mechanisms for PBS instruments. It integrates oracle outputs and 
-          provenance scores into valuation logic and ensures transparent, auditable 
-          market operations. The protocol supports order matching, trade reporting, 
-          audit trails, and regulatory oversight.
-        </p>
-    
-        <!-- Identity & KYC -->
-        <h4 class="text-xl font-bold text-ink mb-3">Identity, KYC, and Compliance</h4>
-        <p class="text-ink/70 mb-6">
-          All participants must complete identity verification using W3C Decentralized 
-          Identifiers (DIDs) and Verifiable Credentials. The appendix outlines three 
-          identity tiers — creators, institutional issuers, and exchange/oracle 
-          operators — each with escalating requirements. Zero‑knowledge proofs enable 
-          privacy‑preserving verification of accreditation, jurisdiction, and credentials.
-        </p>
-    
-        <!-- SeedBid Case Study -->
-        <h4 class="text-xl font-bold text-ink mb-3">SeedBid Case Study — Domain Implementation</h4>
-        <p class="text-ink/70 mb-6">
-          SeedBid serves as the first domain‑specific implementation of the PBS 
-          architecture. The appendix includes a full metadata extension for 
-          SEED_GENETIC assets, including parent line references, cross records, 
-          selection histories, trait attribution, and trial data linking. This creates a 
-          complete bridge between Layer 1 provenance and Layer 2 performance.
-        </p>
-    
-      </div>
-    </section>
+<!-- DOCUMENT 6 — TECHNICAL APPENDIX -->
+<section id="doc-6" class="py-12 md:py-20 px-4 md:px-6 bg-warm">
+  <div class="max-w-4xl mx-auto animate-on-scroll">
+
+    <p class="overline">DOCUMENT 6 OF 7</p>
+
+    <h3 class="text-2xl md:text-3xl font-bold text-ink gold-underline mb-6">
+      Technical Appendix — Provenance-Backed Securities Architecture
+    </h3>
+
+
+    <!-- Overview -->
+    <p class="text-ink/75 text-base md:text-lg leading-relaxed mb-6">
+      This appendix documents the PBS technical and market architecture,
+      including the Provenance Ledger, Performance Oracle, and Exchange
+      Protocol used to support tokenization, valuation, and exchange of
+      intangible assets. As the document states, PBS is “designed for
+      compliance with existing securities law, not circumvention,” and
+      the architecture emphasizes auditability and regulatory integrity.
+    </p>
+
+
+    <!-- Architecture Clarification -->
+    <div class="callout-box mb-8">
+
+      <p class="overline">
+        ARCHITECTURE CLARIFICATION
+      </p>
+
+      <h4 class="text-xl font-bold text-ink mb-3">
+        Analytical Architecture vs. Market Infrastructure
+      </h4>
+
+      <p class="text-ink/70 mb-4">
+        The Technical Appendix describes the original PBS market-oriented
+        three-layer architecture:
+        <strong>Provenance Ledger</strong>,
+        <strong>Performance Oracle</strong>, and
+        <strong>Exchange Protocol</strong>.
+      </p>
+
+      <p class="text-ink/70 mb-4">
+        Subsequent PBS/MPS materials distinguish the analytical architecture
+        from the market infrastructure. In that formulation, the core analytical
+        sequence is:
+        <strong>Provenance Ledger</strong>,
+        <strong>Performance Oracle</strong>, and
+        <strong>Contribution Decomposition &amp; Royalty Flow</strong>.
+      </p>
+
+      <p class="text-ink/70 mb-0">
+        The Exchange Protocol remains part of PBS as the proposed market
+        infrastructure surrounding the resulting economic interests. The two
+        descriptions therefore address different functional views of the same
+        broader PBS/MPS framework.
+      </p>
+
+    </div>
+
+
+    <!-- Core Analytical Architecture -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      Core PBS/MPS Analytical Architecture
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      The current public analytical model separates three related questions:
+      <strong>Provenance Ledger:</strong> Who contributed what?
+      <strong>Performance Oracle:</strong> What measurable outcome occurred?
+      <strong>Contribution Decomposition:</strong> How does documented
+      contribution relate to the measurable outcome?
+    </p>
+
+
+    <!-- Provenance Ledger -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      Provenance Ledger
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      The Provenance Ledger establishes immutable, cryptographically verified
+      records of creation, authorship, contribution, and ownership-related
+      history. The Technical Appendix describes a permissioned-write,
+      public-read consortium blockchain model intended to balance regulatory
+      compliance with public auditability.
+    </p>
+
+    <p class="text-ink/70 mb-4">
+      The Technical Appendix identifies Hyperledger Besu, Hyperledger Fabric,
+      and Avalanche Subnets as candidate platforms and describes deterministic
+      finality mechanisms and schemas for asset registration, contribution
+      records, and ownership records.
+    </p>
+
+    <p class="mb-8">
+      <a href="/provenance-ledger/"
+         class="text-gold font-semibold no-underline">
+        Explore the public Provenance Ledger overview →
+      </a>
+    </p>
+
+
+    <!-- Performance Oracle -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      Performance Oracle
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      The Performance Oracle is the empirical performance layer of PBS,
+      capturing and validating real-world performance information. The
+      Technical Appendix describes independent oracle operation,
+      multi-node aggregation, cross-source validation, and consensus
+      publication as elements of the proposed architecture.
+    </p>
+
+    <p class="text-ink/70 mb-4">
+      Performance information can originate from domain-appropriate sources
+      and pass through ingestion, validation, and publication processes before
+      participating in the broader PBS framework.
+    </p>
+
+    <p class="mb-8">
+      <a href="/performance-oracle/"
+         class="text-gold font-semibold no-underline">
+        Explore the public Performance Oracle overview →
+      </a>
+    </p>
+
+
+    <!-- Contribution Decomposition -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      Contribution Decomposition &amp; Royalty Flow
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      Contribution Decomposition is the analytical framework that connects
+      documented contributions with measurable outcomes. It addresses the
+      attribution problem that arises when value is created collaboratively
+      and contributions interact or persist over time.
+    </p>
+
+    <p class="text-ink/70 mb-4">
+      Within the current PBS/MPS analytical model, Contribution Decomposition
+      follows provenance and performance: provenance establishes the
+      contribution record, performance supplies observable outcome information,
+      and contribution decomposition examines attributable contribution.
+    </p>
+
+    <p class="mb-8">
+      <a href="/contribution-decomposition/"
+         class="text-gold font-semibold no-underline">
+        Explore the public Contribution Decomposition overview →
+      </a>
+    </p>
+
+
+    <!-- Exchange Protocol -->
+    <div class="bg-navy text-white rounded-lg p-6 md:p-8 mb-8">
+
+      <p class="overline-light">
+        PBS MARKET INFRASTRUCTURE
+      </p>
+
+      <h4 class="text-xl font-bold text-gold mb-3">
+        Exchange Protocol
+      </h4>
+
+      <p class="text-white/75 mb-4">
+        The Exchange Protocol remains the proposed market infrastructure
+        surrounding PBS. The Technical Appendix describes listing, pricing,
+        trading, settlement, liquidity, order matching, trade reporting,
+        audit trails, and regulatory oversight as functions of this layer.
+      </p>
+
+      <p class="text-white/60 text-sm mb-0">
+        In the reconciled architecture, Exchange Protocol is treated separately
+        from the three-part analytical sequence. It answers the market question
+        that follows provenance, performance, and attribution: how can a
+        resulting economic interest be handled within compliant market
+        infrastructure?
+      </p>
+
+    </div>
+
+
+    <!-- Identity & KYC -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      Identity, KYC, and Compliance
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      The Technical Appendix describes identity-verification and compliance
+      infrastructure using W3C Decentralized Identifiers (DIDs) and Verifiable
+      Credentials. It also describes separate identity tiers for creators,
+      institutional issuers, and exchange or oracle operators, together with
+      privacy-preserving verification concepts.
+    </p>
+
+
+    <!-- SeedBid Case Study -->
+    <h4 class="text-xl font-bold text-ink mb-3">
+      SeedBid™ Case Study — Domain Implementation
+    </h4>
+
+    <p class="text-ink/70 mb-6">
+      SeedBid™ is presented as the first domain-specific implementation of
+      the PBS architecture. The Technical Appendix describes agricultural
+      genetic metadata including parent-line references, cross records,
+      selection histories, trait attribution, and trial-data relationships,
+      connecting provenance records with performance information.
+    </p>
+
+
+    <!-- Research Bridge -->
+    <div class="border-l-4 border-gold pl-5 mt-8">
+
+      <h4 class="text-lg font-bold text-ink mb-2">
+        Continuing Technical Research
+      </h4>
+
+      <p class="text-ink/65 text-sm leading-relaxed mb-3">
+        PBS/MPS research continues beyond the Technical Appendix. Public
+        architecture pages on Meritocrat.org explain the current framework
+        while more detailed technical and mathematical work may be reviewed
+        and published separately.
+      </p>
+
+      <a href="/research/"
+         class="text-gold font-semibold text-sm no-underline">
+        Explore PBS/MPS Research &amp; Primary Sources →
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- MERITOCRATIC PARTY OVERVIEW -->
     <section id="meritocratic-party" class="py-16 md:py-24 px-4 md:px-6 bg-white">
@@ -1747,7 +1886,7 @@
           <div class="bg-white rounded-lg p-6 shadow-sm border border-ink/5 animate-on-scroll">
             <h3 class="font-bold text-lg text-ink mb-2">6. Technical Appendix</h3>
             <p class="text-ink/60 text-sm mb-4">
-              Full technical architecture for the Provenance Ledger, Performance Oracle, and Exchange Protocol.
+              Full technical architecture for the Provenance Ledger, Performance Oracle, and Contribution Decomposition.
             </p>
             <a href="https://raw.githubusercontent.com/scarab187/meritocrat-org-docs/main/docs/6-technical-appendix.pdf" 
                target="_blank" class="btn-gold inline-block">Download PDF</a>
