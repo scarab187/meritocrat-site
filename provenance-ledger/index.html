@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What Is the Provenance Ledger? | PBS/MPS | Meritocrat.org</title>
+
+  <meta
+    name="description"
+    content="Learn what the Provenance Ledger is, why provenance matters to intangible assets, and how the ledger forms the evidentiary foundation of the PBS/MPS architecture."
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/provenance-ledger/"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is the Provenance Ledger?",
+    "description": "A primary-source explanation of the Provenance Ledger within the PBS/MPS architecture.",
+    "author": {
+      "@type": "Person",
+      "name": "Joseph Richard Harmon"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meritocrat.org",
+      "url": "https://meritocrat.org/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://meritocrat.org/provenance-ledger/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1A2744;
+      --navy-dark: #111B30;
+      --gold: #C9982E;
+      --warm: #F8F6F1;
+      --ink: #1C1C1C;
+      --muted: #666666;
+      --border: #E4DFD5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.7;
+      background: white;
+    }
+
+    a {
+      color: #A67B1E;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 24px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .brand {
+      color: white;
+      letter-spacing: .08em;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 80px 24px 90px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .wide {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .overline {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin: 15px 0 25px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,.78);
+      font-size: 1.22rem;
+      max-width: 820px;
+    }
+
+    .section {
+      padding: 70px 24px;
+    }
+
+    .warm {
+      background: var(--warm);
+    }
+
+    .dark {
+      background: var(--navy);
+      color: white;
+    }
+
+    .dark h2,
+    .dark h3 {
+      color: white;
+    }
+
+    .dark p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .question {
+      border-left: 4px solid var(--gold);
+      padding-left: 24px;
+    }
+
+    .gold-line {
+      width: 64px;
+      height: 3px;
+      background: var(--gold);
+      margin: 18px 0 26px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: white;
+      border-top: 4px solid var(--gold);
+      padding: 28px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .callout {
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      padding: 28px;
+      background: white;
+      border-radius: 5px;
+      margin-top: 30px;
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .layer {
+      border-top: 4px solid var(--gold);
+      padding: 25px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .layer-number {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .related {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .related a {
+      display: block;
+      background: white;
+      padding: 24px;
+      border-top: 4px solid var(--gold);
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .related strong {
+      color: var(--navy);
+      display: block;
+    }
+
+    .related span {
+      display: block;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    footer strong {
+      display: block;
+      color: var(--gold);
+      margin-top: 6px;
+    }
+
+    @media (max-width: 720px) {
+      .cards,
+      .architecture,
+      .related {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="brand" href="/">MERITOCRAT.ORG</a>
+
+    <div class="navlinks">
+      <a href="/pbs/">PBS</a>
+      <a href="/mps/">MPS</a>
+      <a href="/washington-pbs-act/">WA Act</a>
+      <a href="/">Home</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="overline">
+        PBS Architecture · Layer 1
+      </div>
+
+      <h1>
+        What Is the Provenance Ledger?
+      </h1>
+
+      <p>
+        The Provenance Ledger is the evidentiary foundation of the
+        PBS/MPS architecture: a proposed system for establishing
+        verifiable records of creation, contribution, provenance,
+        and ownership history.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- DEFINITION -->
+  <section class="section">
+    <div class="container question">
+
+      <h2>
+        What does the Provenance Ledger do?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        The Provenance Ledger is designed to answer a foundational
+        question:
+      </p>
+
+      <p>
+        <strong>
+          What is this asset, where did it come from, and who contributed
+          to its creation or development?
+        </strong>
+      </p>
+
+      <p>
+        PBS/MPS begins with provenance because economic attribution requires
+        an evidentiary basis. Before performance can be measured or economic
+        rights considered, the system must be capable of documenting the
+        asset and its contribution history.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- WHY PROVENANCE -->
+  <section class="section warm">
+    <div class="container question">
+
+      <h2>
+        Why does provenance matter?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        Many intangible assets develop through cumulative contributions:
+        research, expertise, creative work, intellectual property,
+        agricultural genetics, data, processes, and other forms of
+        knowledge.
+      </p>
+
+      <p>
+        Conventional records may identify a final owner or legal entity
+        without necessarily preserving a complete history of the
+        contributions that led to the resulting asset.
+      </p>
+
+      <p>
+        The provenance concept attempts to preserve that history in a form
+        that can later support verification, attribution, performance
+        analysis, and auditability.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- RECORD CONTENT -->
+  <section class="section">
+    <div class="wide">
+
+      <div class="overline">
+        Evidentiary Function
+      </div>
+
+      <h2>
+        What kinds of relationships can provenance describe?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>
+            Creation
+          </h3>
+
+          <p>
+            A provenance record can identify the origin of an asset or
+            contribution and associate that origin with an attributable
+            participant or source.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>
+            Contribution
+          </h3>
+
+          <p>
+            Where multiple inputs contribute to a resulting asset,
+            provenance can preserve records of those contributions rather
+            than recording only the final output.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>
+            Development History
+          </h3>
+
+          <p>
+            Provenance can document how an asset changes over time and
+            preserve relationships between earlier and later stages of
+            development.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>
+            Ownership History
+          </h3>
+
+          <p>
+            Provenance can support an auditable record of ownership-related
+            information associated with the asset and its history.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- NOT VALUATION -->
+  <section class="section dark">
+    <div class="container">
+
+      <div class="overline">
+        Important Distinction
+      </div>
+
+      <h2>
+        Does the Provenance Ledger determine value?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        Not by itself.
+      </p>
+
+      <p>
+        The Provenance Ledger establishes the proposed evidentiary record.
+        It does not independently determine market price, investment value,
+        or real-world performance.
+      </p>
+
+      <p>
+        Within the PBS architecture, provenance and performance serve
+        different functions. Provenance concerns the history and
+        attribution of the asset. Performance concerns independently
+        observable outcomes associated with that asset.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- THREE LAYERS -->
+  <section class="section warm">
+    <div class="wide">
+
+      <div class="overline">
+        PBS Architecture
+      </div>
+
+      <h2>
+        How does the Provenance Ledger fit into PBS?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <div class="architecture">
+
+        <div class="layer">
+
+          <div class="layer-number">
+            Layer 1
+          </div>
+
+          <h3>
+            Provenance Ledger
+          </h3>
+
+          <p>
+            Establishes the evidentiary history of the asset,
+            contributions, and associated ownership information.
+          </p>
+
+        </div>
+
+
+        <div class="layer">
+
+          <div class="layer-number">
+            Layer 2
+          </div>
+
+          <h3>
+            Performance Oracle
+          </h3>
+
+          <p>
+            Connects the documented asset with independently observable
+            information about real-world performance.
+          </p>
+
+        </div>
+
+
+        <div class="layer">
+
+          <div class="layer-number">
+            Layer 3
+          </div>
+
+          <h3>
+            Exchange Protocol
+          </h3>
+
+          <p>
+            Represents the proposed market layer in which compliant
+            economic interests could be listed, priced, transferred,
+            reported, and audited.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MPS -->
+  <section class="section">
+    <div class="container question">
+
+      <h2>
+        How does the Provenance Ledger relate to MPS?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        The Meritocratic Provenance System is the broader framework for
+        documenting contribution, establishing provenance, incorporating
+        measurable performance information, and examining attributable
+        economic value.
+      </p>
+
+      <p>
+        The Provenance Ledger supplies the historical record on which those
+        later functions can depend.
+      </p>
+
+      <div class="callout">
+        Provenance establishes evidence of contribution.
+        Performance examines outcomes.
+        The broader PBS/MPS framework explores how those records could
+        interact with economic and legal rights.
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- HUMAN EXPERTISE -->
+  <section class="section warm">
+    <div class="container question">
+
+      <h2>
+        How could provenance apply to human expertise?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        Expertise is often cumulative and collaborative. Knowledge can be
+        developed across years of work, research, experimentation,
+        documentation, and interaction among many contributors.
+      </p>
+
+      <p>
+        MPS proposes that meaningful contribution histories can be
+        documented rather than allowing the relationship between human
+        contribution and later economic output to disappear entirely.
+      </p>
+
+      <p>
+        The Provenance Ledger is the proposed evidentiary layer for
+        preserving those relationships.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- AI -->
+  <section class="section">
+    <div class="container question">
+
+      <h2>
+        Why is provenance relevant to artificial intelligence?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        AI systems can incorporate information originating from many forms
+        of human knowledge, research, creative activity, data, and
+        expertise.
+      </p>
+
+      <p>
+        The policy question raised by MPS is whether future economic
+        systems should preserve meaningful records connecting human
+        contribution with systems and assets that incorporate those
+        contributions.
+      </p>
+
+      <p>
+        Provenance provides the proposed evidentiary starting point for
+        examining that question.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- SEEDBID -->
+  <section class="section dark">
+    <div class="container">
+
+      <div class="overline">
+        Agricultural Example
+      </div>
+
+      <h2>
+        How does SeedBid™ illustrate provenance?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        SeedBid™ is the proposed agricultural implementation of the PBS/MPS
+        framework.
+      </p>
+
+      <p>
+        Within that use case, provenance concerns records associated with
+        agricultural genetic intellectual property and the history of
+        contributions involved in developing an asset.
+      </p>
+
+      <p>
+        Performance information belongs to the separate Performance Oracle
+        layer. Keeping those functions distinct allows provenance evidence
+        and performance evidence to be examined separately.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- LEGAL DISTINCTION -->
+  <section class="section">
+    <div class="container question">
+
+      <h2>
+        Does a provenance record itself establish a legal ownership right?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        A provenance record and a legally enforceable ownership right are
+        not the same thing.
+      </p>
+
+      <p>
+        The Provenance Ledger is proposed as evidentiary infrastructure.
+        Property rights, intellectual-property rights, contractual rights,
+        and securities regulation remain questions of applicable law.
+      </p>
+
+      <p>
+        This distinction is particularly important to the Washington policy
+        discussion because DFI identified property rights and intellectual
+        property among the legal areas implicated by the larger PBS/MPS
+        architecture.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- PUBLIC SCOPE -->
+  <section class="section warm">
+    <div class="container question">
+
+      <div class="overline">
+        Public Architecture
+      </div>
+
+      <h2>
+        Why is this page limited to the architectural concept?
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        Meritocrat.org publishes the conceptual architecture necessary to
+        explain how PBS/MPS is intended to work.
+      </p>
+
+      <p>
+        This page is not intended to serve as a technical implementation
+        specification, deployment guide, legal ownership registry, or
+        securities offering document.
+      </p>
+
+      <p>
+        Its purpose is to provide legislators, researchers, policymakers,
+        and the public with a clear explanation of the role provenance
+        plays within the proposed framework.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- RELATED -->
+  <section class="section warm">
+    <div class="wide">
+
+      <div class="overline">
+        Continue Exploring
+      </div>
+
+      <h2>
+        Related PBS/MPS resources
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <div class="related">
+
+        <a href="/pbs/">
+          <strong>
+            Provenance-Backed Securities
+          </strong>
+          <span>
+            Primary-source explanation of the PBS framework.
+          </span>
+        </a>
+
+
+        <a href="/mps/">
+          <strong>
+            Meritocratic Provenance System
+          </strong>
+          <span>
+            The broader contribution and provenance framework.
+          </span>
+        </a>
+
+
+        <a href="/washington-pbs-act/">
+          <strong>
+            Washington PBS Act
+          </strong>
+          <span>
+            The proposed legislative framework.
+          </span>
+        </a>
+
+
+        <a href="/dfi-regulatory-history/">
+          <strong>
+            DFI Regulatory History
+          </strong>
+          <span>
+            The factual public record of ScarabCloud's regulatory
+            engagement.
+          </span>
+        </a>
+
+
+        <a href="/risk-capital-test/">
+          <strong>
+            Washington Risk Capital Context
+          </strong>
+          <span>
+            Why Washington-specific securities analysis became relevant
+            to PBS/MPS.
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- NOTICE -->
+  <section class="section dark">
+    <div class="container">
+
+      <h2>
+        Technical and Regulatory Notice
+      </h2>
+
+      <p>
+        This page describes a proposed architectural concept for
+        public-policy and educational purposes.
+      </p>
+
+      <p>
+        It does not constitute legal, securities, investment, technical,
+        or financial advice and does not establish any person's ownership
+        of a particular asset.
+      </p>
+
+      <p>
+        No securities are offered or solicited through this page.
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  Meritocrat.org · Mill Creek, Washington
+  <strong>If you create the value, you own the asset.</strong>
+</footer>
+
+</body>
+</html>
