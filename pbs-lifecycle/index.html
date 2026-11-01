@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    PBS Lifecycle | How the Meritocratic Provenance System Works | Meritocrat.org
+  </title>
+
+  <meta
+    name="description"
+    content="A public explanation of the proposed PBS lifecycle: contribution documentation, provenance, performance measurement, contribution decomposition, economic attribution, and royalty participation."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-snippet:-1,max-image-preview:large"
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/pbs-lifecycle/"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meritocrat.org">
+  <meta property="og:title" content="The PBS Lifecycle">
+  <meta
+    property="og:description"
+    content="See how the proposed Meritocratic Provenance System connects documented contributions with measured performance, attribution, economic claims, and royalty participation."
+  >
+  <meta
+    property="og:url"
+    content="https://meritocrat.org/pbs-lifecycle/"
+  >
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The PBS Lifecycle">
+  <meta
+    name="twitter:description"
+    content="How MPS connects contribution, provenance, performance, attribution, PBS, and economic participation."
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "The PBS Lifecycle",
+    "description": "A public explanation of the proposed lifecycle connecting documented contributions, provenance, performance measurement, contribution decomposition, economic attribution, and Provenance-Backed Securities.",
+    "url": "https://meritocrat.org/pbs-lifecycle/",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://meritocrat.org/pbs-lifecycle/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meritocrat.org",
+      "url": "https://meritocrat.org/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Provenance-Backed Securities"
+      },
+      {
+        "@type": "Thing",
+        "name": "Meritocratic Provenance System"
+      },
+      {
+        "@type": "Thing",
+        "name": "Contribution Decomposition"
+      },
+      {
+        "@type": "Thing",
+        "name": "Provenance Ledger"
+      },
+      {
+        "@type": "Thing",
+        "name": "Performance Oracle"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-dark: #111b30;
+      --navy-soft: #26395f;
+      --gold: #c9982e;
+      --gold-dark: #946b12;
+      --gold-light: #e9d9af;
+      --warm: #f8f6f1;
+      --warm-dark: #eee8d9;
+      --white: #ffffff;
+      --ink: #1c1c1c;
+      --muted: #626875;
+      --border: #e4dfd5;
+      --success: #2d5f3e;
+      --success-bg: #e8f1e9;
+      --shadow: 0 10px 30px rgba(17, 27, 48, 0.08);
+      --radius: 8px;
+      --max-width: 1120px;
+      --reading-width: 830px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--gold-dark);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--navy);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 1000;
+      padding: 12px 18px;
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .site-nav {
+      width: min(var(--max-width), calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 88% 18%,
+          rgba(201, 152, 46, 0.2),
+          transparent 31%
+        ),
+        linear-gradient(145deg, var(--navy), var(--navy-dark));
+      padding: 92px 24px 98px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -170px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(201, 152, 46, 0.25);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.16;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(2.7rem, 7vw, 5.2rem);
+      letter-spacing: -0.045em;
+    }
+
+    .hero-lede {
+      max-width: 850px;
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-weight: 800;
+      text-decoration: none;
+      transition:
+        transform 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+
+    .button-primary:hover {
+      background: #d9aa43;
+      color: var(--navy-dark);
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.34);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .button-secondary:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .section {
+      padding: 78px 24px;
+    }
+
+    .section-warm {
+      background: var(--warm);
+    }
+
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .container {
+      width: min(var(--reading-width), 100%);
+      margin: 0 auto;
+    }
+
+    .wide {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.025em;
+    }
+
+    .section-dark .section-title {
+ 
