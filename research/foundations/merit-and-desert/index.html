@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Merit and Desert | Meritocrat.org</title>
+
+  <meta
+    name="description"
+    content="Merit and desert asks when economic rewards reflect performance attributable to a person's own agency rather than antecedent advantage."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-snippet:-1"
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/research/foundations/merit-and-desert/"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Merit and Desert",
+    "description": "A research-foundations explanation of weak and strong meritocracy, moral attribution, provenance, and economic desert.",
+    "url": "https://meritocrat.org/research/foundations/merit-and-desert/",
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": "Meritocrat.org Research Foundations",
+      "url": "https://meritocrat.org/research/foundations/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meritocrat.org",
+      "url": "https://meritocrat.org/"
+    },
+    "about": [
+      "Meritocracy",
+      "Economic desert",
+      "Provenance",
+      "Economic justice",
+      "Meritocratic Provenance System"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1A2744;
+      --gold: #C9982E;
+      --gold-dark: #8A6511;
+      --warm: #F8F6F1;
+      --ink: #1C1C1C;
+      --muted: #5D6470;
+      --line: #D9D5CA;
+      --soft-blue: #F1F4F9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font: 17px/1.7 system-ui, -apple-system, "Segoe UI",
+            Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 16px 20px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 48px 22px 64px;
+    }
+
+    h1 {
+      margin: .35rem 0 1rem;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      padding-bottom: .35rem;
+      border-bottom: 2px solid var(--gold);
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #704F00;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .lede {
+      color: #3F4650;
+      font-size: 1.18rem;
+      max-width: 780px;
+    }
+
+    .note,
+    .status,
+    .principle {
+      border-left: 4px solid var(--gold);
+      background: var(--warm);
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+
+    .principle {
+      background: var(--soft-blue);
+      border-left-color: var(--navy);
+    }
+
+    .principle p:last-child,
+    .note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .chain div {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 16px 12px;
+      text-align: center;
+      background: #fff;
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 22px;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .questions {
+      margin: 1.5rem 0;
+    }
+
+    .questions li {
+      margin: .75rem 0;
+    }
+
+    .related {
+      margin-top: 3.5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      line-height: 2;
+    }
+
+    footer {
+      background: var(--warm);
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 34px;
+      }
+
+      .chain,
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/research/foundations/">
+    MERITOCRAT.ORG / RESEARCH FOUNDATIONS
+  </a>
+</header>
+
+<main>
+
+  <p class="eyebrow">Foundation 2</p>
+
+  <h1>Merit and Desert</h1>
+
+  <p class="lede">
+    Performance and desert are not the same claim.
+    A person may perform well in a market without every cause of that
+    performance being attributable to that person's own agency.
+    The provenance framework asks what part of an outcome can reasonably
+    ground a claim of merit.
+  </p>
+
+  <div class="note">
+    <strong>Core distinction:</strong>
+    A market can reward performance accurately while remaining silent
+    about how the capacity to perform was produced.
+  </div>
+
+
+  <h2 id="problem">The central problem</h2>
+
+  <p>
+    Meritocracy is often used to express two different ideas.
+    The first is descriptive: better performance receives greater reward.
+    The second is normative: greater reward is deserved because the
+    performance is attributable to the person receiving it.
+  </p>
+
+  <p>
+    Those propositions are not equivalent.
+  </p>
+
+  <p>
+    A market price can respond to productivity without determining how
+    much of that productivity arose from effort, cultivated skill,
+    creativity, judgment, inherited resources, social connections,
+    geographic circumstance, institutional position, or other causal
+    inputs.
+  </p>
+
+  <p>
+    The Meritocratic Provenance System therefore treats the movement from
+    performance to desert as a problem of causal attribution rather than
+    assuming that market success itself proves merit.
+  </p>
+
+
+  <h2 id="weak">Weak meritocracy</h2>
+
+  <p>
+    <strong>Weak meritocracy</strong> means that rewards track measured
+    performance.
+  </p>
+
+  <p>
+    A more productive worker may receive a higher wage. A more successful
+    innovation may receive a larger market return. A firm producing
+    something buyers value more highly may earn more.
+  </p>
+
+  <p>
+    In this sense, meritocracy describes the relationship between observed
+    performance and reward. It does not answer the historical question of
+    how the person's productive capacity came to exist.
+  </p>
+
+  <div class="principle">
+    <strong>Weak meritocracy asks:</strong>
+    <p>
+      Did the reward respond to performance?
+    </p>
+  </div>
+
+
+  <h2 id="strong">Strong meritocracy</h2>
+
+  <p>
+    <strong>Strong meritocracy</strong> adds a provenance condition.
+    Reward should track performance that is, as far as practicable,
+    attributable to the person's agency rather than merely to antecedent
+    conditions the person did not produce or choose.
+  </p>
+
+  <p>
+    The framework identifies effort, cultivated skill, creative judgment,
+    innovation, and genuine investment in one's capacities as examples of
+    inputs capable of supporting a claim of meritocratic provenance.
+  </p>
+
+  <p>
+    By contrast, inherited resources, inherited network position,
+    geographic circumstance, and institutional favoritism are treated as
+    examples of inputs whose contribution to an outcome cannot simply be
+    credited to the recipient's own agency.
+  </p>
+
+  <div class="principle">
+    <strong>Strong meritocracy asks:</strong>
+    <p>
+      How much of the rewarded performance is reasonably attributable
+      to the person's own agency?
+    </p>
+  </div>
+
+
+  <h2 id="reasoning-chain">From performance to desert</h2>
+
+  <p>
+    The framework's reasoning can be expressed as a four-stage chain:
+  </p>
+
+  <div class="chain" aria-label="Reasoning chain from performance to desert">
+    <div>Performance</div>
+    <div>Provenance</div>
+    <div>Agency</div>
+    <div>Desert</div>
+  </div>
+
+  <p>
+    <strong>Performance</strong> identifies an outcome or contribution.
+    <strong>Provenance</strong> asks what causal inputs produced it.
+    <strong>Agency</strong> asks which of those inputs can reasonably be
+    attributed to the person.
+    <strong>Desert</strong> concerns the normative claim that can be built
+    on that attributable contribution.
+  </p>
+
+  <p>
+    Provenance is therefore the missing analytical step between observing
+    performance and concluding that the resulting reward is deserved.
+  </p>
+
+
+  <h2 id="advantage">What happens to antecedent advantage?</h2>
+
+  <p>
+    The framework does not deny that inherited resources, networks,
+    geography, institutions, or other background conditions can increase
+    productivity. The relevant question is different: whether the
+    beneficiary can claim those causal inputs as products of personal
+    agency.
+  </p>
+
+  <p>
+    This distinction matters because an economic outcome can contain both
+    meritocratic and non-meritocratic causal components at the same time.
+    The framework therefore does not require classifying an entire person
+    or an entire outcome as either deserved or undeserved.
+  </p>
+
+  <p>
+    Instead, provenance analysis asks whether the sources of an outcome can
+    be distinguished well enough to separate genuine contribution from
+    antecedent advantage.
+  </p>
+
+
+  <h2 id="inequality">Does meritocratic desert require equal outcomes?</h2>
+
+  <p>
+    No.
+  </p>
+
+  <p>
+    The framework does not identify inequality itself as the object of
+    correction. Large differences in reward can remain compatible with
+    the theory when those differences are attributable to genuine
+    differences in contribution.
+  </p>
+
+  <p>
+    Its target is the portion of an outcome attributed to
+    non-meritocratic provenance, not the mere fact that one person
+    receives more than another.
+  </p>
+
+  <div class="comparison">
+
+    <section class="card">
+      <h3>What the framework preserves</h3>
+      <p>
+        Rewards for effort, cultivated skill, creativity, innovation,
+        productive judgment, and other contributions attributable to
+        agency.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>What the framework questions</h3>
+      <p>
+        The automatic treatment of inherited, structural, geographic,
+        network, or institutional advantage as if the resulting market
+        return were wholly a product of individual merit.
+      </p>
+    </section>
+
+  </div>
+
+
+  <h2 id="talent">What about talent?</h2>
+
+  <p>
+    Talent presents a difficult boundary case because productive capacity
+    can reflect both natural endowment and deliberate cultivation.
+  </p>
+
+  <p>
+    The MPS position is not that differences in talent must disappear from
+    economic rewards. The framework instead asks whether what is rewarded
+    as talent represents cultivated capacity attributable to the person or
+    whether the observed advantage substantially reflects antecedent
+    conditions outside that person's agency.
+  </p>
+
+  <p>
+    This makes provenance analysis more demanding than simply observing
+    who performed best. It requires attention to the causal history of the
+    capacity that produced the performance.
+  </p>
+
+
+  <h2 id="theory">Where this sits in political and economic theory</h2>
+
+  <p>
+    The broader research places the provenance framework in conversation
+    with several established traditions rather than presenting it as a
+    replacement for all of them.
+  </p>
+
+  <ul class="questions">
+    <li>
+      <strong>Neoclassical marginal productivity theory:</strong>
+      MPS accepts the importance of prices and productive incentives while
+      questioning whether a market-clearing reward, by itself, establishes
+      moral desert.
+    </li>
+
+    <li>
+      <strong>Rawlsian justice:</strong>
+      the framework shares the concern that natural and social starting
+      conditions are morally arbitrary, while seeking a more explicit
+      institutional mechanism for provenance assessment.
+    </li>
+
+    <li>
+      <strong>Nozickian entitlement theory:</strong>
+      MPS shares the emphasis on historical process, while extending the
+      historical inquiry to the provenance of the capacities and
+      advantages involved in acquisition and exchange.
+    </li>
+
+    <li>
+      <strong>Luck egalitarianism:</strong>
+      the chosen-versus-unchosen distinction closely parallels the MPS
+      distinction between meritocratic and non-meritocratic provenance.
+    </li>
+
+    <li>
+      <strong>Capabilities theory:</strong>
+      the framework recognizes that resources and opportunities are
+      converted into productive capacities under differing social and
+      institutional conditions.
+    </li>
+
+    <li>
+      <strong>Austrian market-process theory:</strong>
+      MPS treats decentralized prices and productive incentives as
+      constraints to preserve rather than mechanisms to replace.
+    </li>
+  </ul>
+
+
+  <h2 id="limits">Interpretation boundaries</h2>
+
+  <p>
+    Several boundaries are important when interpreting the argument.
+  </p>
+
+  <ul class="questions">
+    <li>
+      Market success is not treated as evidence that a person lacks merit.
+    </li>
+
+    <li>
+      Unequal rewards are not treated as inherently unjust.
+    </li>
+
+    <li>
+      Having an advantage does not by itself establish that an entire
+      outcome is undeserved.
+    </li>
+
+    <li>
+      Provenance does not require perfect causal reconstruction.
+    </li>
+
+    <li>
+      The framework distinguishes analysis of structural patterns from a
+      moral judgment about the worth of individual people.
+    </li>
+  </ul>
+
+  <p>
+    These boundaries are important because the framework concerns the
+    attribution of economic outcomes, not the attribution of personal
+    worth.
+  </p>
+
+
+  <h2 id="epistemic">The epistemic constraint</h2>
+
+  <p>
+    Strong meritocracy creates a measurement problem. Real economic
+    outcomes have many interacting causes, and the counterfactual question
+    is difficult: what would the outcome have been without a particular
+    inherited, institutional, geographic, or network advantage?
+  </p>
+
+  <p>
+    The MPS foundations therefore do not require perfect provenance
+    tracing. They instead propose probabilistic assessment and explicitly
+    require uncertainty to constrain the strength of any resulting
+    inference or correction.
+  </p>
+
+  <div class="note">
+    <strong>Interpretation rule:</strong>
+    Greater uncertainty about provenance should produce greater caution
+    about claims of attribution. The framework does not treat an uncertain
+    causal estimate as a certain judgment of desert.
+  </div>
+
+
+  <h2 id="conclusion">The meritocratic claim</h2>
+
+  <p>
+    The central argument can be stated narrowly:
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>
+        Reward tracking performance is not sufficient to establish
+        meritocratic desert.
+      </strong>
+    </p>
+
+    <p>
+      A stronger claim of desert requires examining the provenance of the
+      performance and distinguishing, as reliably as practicable, the
+      contribution attributable to agency from the contribution of
+      morally arbitrary advantage.
+    </p>
+  </div>
+
+  <p>
+    On this account, provenance does not replace merit. It supplies the
+    causal analysis required to determine what the word
+    <em>merit</em> is actually referring to.
+  </p>
+
+
+  <div class="status">
+    <strong>Status:</strong>
+    Normative and analytical theory. This page describes the MPS position
+    on merit and desert; it does not represent a claim of consensus among
+    economists, philosophers, regulators, or other institutions.
+  </div>
+
+
+  <nav class="related" aria-label="Research Foundations">
+    <strong>Continue through the foundations:</strong><br>
+
+    <a href="/research/foundations/why-provenance/">
+      Why Provenance?
+    </a>
+    ·
+
+    <a href="/research/foundations/merit-and-desert/"
+       aria-current="page">
+      Merit and Desert
+    </a>
+    ·
+
+    <a href="/research/foundations/advantage-laundering/">
+      Advantage Laundering
+    </a>
+    ·
+
+    <a href="/research/foundations/markets-and-incentives/">
+      Markets and Incentives
+    </a>
+    ·
+
+    <a href="/research/foundations/measurement-and-limits/">
+      Measurement and Limits
+    </a>
+    ·
+
+    <a href="/research/foundations/policy-law-regulation/">
+      Policy, Law and Regulation
+    </a>
+    ·
+
+    <a href="/research/foundations/glossary/">
+      Glossary
+    </a>
+  </nav>
+
+</main>
+
+<footer>
+  Research and proposed framework.
+  Not legal, financial, or investment advice.
+</footer>
+
+</body>
+</html>
