@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Policy, Law and Regulation | Meritocrat.org
+  </title>
+
+  <meta
+    name="description"
+    content="PBS and MPS raise questions across securities regulation, property, intellectual property, contracts, privacy, data governance, governance design, and institutional authority. This foundation separates proposals, author analysis, regulator statements, and binding legal status."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-snippet:-1"
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/research/foundations/policy-law-regulation/"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Policy, Law and Regulation",
+    "url": "https://meritocrat.org/research/foundations/policy-law-regulation/",
+    "description": "A research-foundations explanation of the legal and regulatory questions surrounding PBS and MPS.",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is PBS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PBS is the proposed instrument layer associated with the broader Meritocratic Provenance System. Project materials describe PBS as connecting economic interests with documented contributions, provenance information, and performance evidence. This is a proposed architecture, not a final legal classification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PBS necessarily a security?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No final legal classification is asserted on this page. Classification depends on the actual instrument, transaction, participant rights, governance arrangements, offering structure, and applicable law."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What did Washington DFI say?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In correspondence supplied with the project materials, Washington DFI said that the contemplated PBS/MPS architecture appeared to extend beyond the laws administered by DFI and could raise issues including property rights and intellectual property. DFI also said securities requirements would apply to the extent the architecture involves an offer or sale of securities, and DFI did not select a regulatory pathway for bringing PBS to market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the Washington risk-capital test matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DFI told the project that a Washington securities analysis should include review of the risk-capital test in addition to Howey. The project's own risk-capital analysis treats practical and actual managerial control as a governance-dependent question. The project analysis is not itself a DFI classification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does cryptographic anchoring establish?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Within the proposed architecture, cryptographic mechanisms are intended to make later modification detectable and associate records with verified submission or identity information. Record integrity should not be confused with proof that an original assertion was accurate, lawful, or causally valid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a contribution right already an established property right?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No established legal status is asserted here. Project materials describe contribution rights as a proposed concept whose enforceability or classification would depend on applicable contracts, statutes, regulations, or binding legal decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PBS/MPS already deployed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The supplied formal-submission materials describe PBS/MPS as being at an architectural and intellectual-property development stage at the time of that submission. Public architecture descriptions should therefore be read as proposals unless implementation is independently established."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1A2744;
+      --navy-dark: #111B30;
+      --gold: #C9982E;
+      --gold-dark: #8A6511;
+      --warm: #F8F6F1;
+      --ink: #1C1C1C;
+      --muted: #5D6470;
+      --line: #D9D5CA;
+      --soft: #F1F4F9;
+      --green: #285C46;
+      --green-soft: #EEF6F1;
+      --red: #8A3434;
+      --red-soft: #FBEFEF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #FFFFFF;
+      font: 17px/1.7 system-ui, -apple-system,
+        "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    header {
+      padding: 16px 20px;
+      color: #FFFFFF;
+      background: var(--navy);
+    }
+
+    header a {
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 48px 22px 64px;
+    }
+
+    h1 {
+      margin: .35rem 0 1rem;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      padding-bottom: .35rem;
+      color: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin-top: 1.7rem;
+      color: var(--navy);
+    }
+
+    a {
+      color: #704F00;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    ul {
+      padding-left: 1.35rem;
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .lede {
+      color: #3F4650;
+      font-size: 1.18rem;
+    }
+
+    .note,
+    .status,
+    .legal-notice {
+      margin: 24px 0;
+      padding: 17px 20px;
+      border-left: 4px solid var(--gold);
+      background: var(--warm);
+    }
+
+    .legal-notice {
+      border-left-color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .rule {
+      margin: 28px 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--navy);
+      background: var(--soft);
+    }
+
+    .rule ol {
+      margin-bottom: 0;
+      padding-left: 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 26px 0;
+    }
+
+    .card {
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      border-radius: 6px;
+      background: #FFFFFF;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .q {
+      padding-top: .1rem;
+      scroll-margin-top: 20px;
+    }
+
+    .answer-status {
+      display: inline-block;
+      margin-bottom: 7px;
+      padding: 3px 8px;
+      color: var(--green);
+      background: var(--green-soft);
+      border-radius: 4px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .proposed {
+      color: #725B24;
+      background: #EEE8D9;
+    }
+
+    .author-analysis {
+      color: #4A5673;
+      background: #EAF0FA;
+    }
+
+    .regulator {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .not-determined {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .flow {
+      margin: 28px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: flow;
+    }
+
+    .flow li {
+      position: relative;
+      margin: 12px 0;
+      padding: 18px 18px 18px 64px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      counter-increment: flow;
+    }
+
+    .flow li::before {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 30px;
+      height: 30px;
+      color: #FFFFFF;
+      background: var(--navy);
+      border-radius: 50%;
+      content: counter(flow);
+      font-weight: 800;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .related {
+      margin-top: 3.5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      line-height: 2;
+    }
+
+    footer {
+      padding: 25px 20px;
+      color: var(--muted);
+      background: var(--warm);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 34px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="/research/foundations/">
+      MERITOCRAT.ORG / RESEARCH FOUNDATIONS
+    </a>
+  </header>
+
+  <main>
+    <p class="eyebrow">
+      Foundation 6
+    </p>
+
+    <h1>
+      Policy, Law and Regulation
+    </h1>
+
+    <p class="lede">
+      PBS and MPS intersect with questions of securities regulation,
+      property and intellectual property, contracts, privacy,
+      data governance, institutional authority, governance design,
+      and regulatory oversight. The first rule of this page is to
+      keep proposed architecture separate from established law.
+    </p>
+
+    <div class="rule">
+      <strong>Public status rule</strong>
+
+      <ol>
+        <li>
+          <strong>Proposal:</strong>
+          what the PBS/MPS architecture is designed to do.
+        </li>
+
+        <li>
+          <strong>Author analysis:</strong>
+          a legal or regulatory interpretation contained in project
+          research.
+        </li>
+
+        <li>
+          <strong>Regulator statement:</strong>
+          what an agency actually communicated.
+        </li>
+
+        <li>
+          <strong>Legal determination:</strong>
+          a classification or obligation established through the
+          legally applicable authority and facts.
+        </li>
+      </ol>
+    </div>
+
+    <p>
+      These categories are not interchangeable. A proposal does not
+      become law because it appears in a technical architecture, and an
+      author analysis does not become an agency position because it was
+      submitted to a regulator.
+    </p>
+
+    <h2 id="perimeter">
+      The regulatory perimeter
+    </h2>
+
+    <p>
+      PBS/MPS does not present a single legal question. The architecture
+      can touch several legal domains because it combines provenance
+      records, performance measurement, contribution attribution,
+      economic interests, identity information, contractual relationships,
+      and potential market infrastructure.
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <h3>Securities</h3>
+
+        <p>
+          Whether a specific instrument or transaction falls within
+          applicable securities definitions and, if so, what registration,
+          exemption, disclosure, or intermediary rules apply.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Property and IP</h3>
+
+        <p>
+          Whether a claimed contribution interest corresponds to an
+          existing property or intellectual-property right, a contractual
+          interest, or a proposed new legal category.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Contracts</h3>
+
+        <p>
+          How parties define contribution scope, attribution,
+          economic participation, disputes, and enforceable obligations.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Privacy and data governance</h3>
+
+        <p>
+          How identity, provenance evidence, performance information,
+          consent, access, and other regulated data are handled.
+        </p>
+      </section>
+    </div>
+
+    <h2 id="questions">
+      Core questions
+    </h2>
+
+    <article class="q" id="what-is-pbs">
+      <h3>
+        What is PBS?
+      </h3>
+
+      <div class="answer-status proposed">
+        Proposed architecture
+      </div>
+
+      <p>
+        Provenance-Backed Securities are the proposed instrument layer
+        associated with the broader Meritocratic Provenance System.
+        Project materials connect economic interests with documented
+        contributions, provenance information, performance evidence,
+        attribution, and royalty logic.
+      </p>
+
+      <p>
+        That architectural description does not itself establish what
+        the instrument is under applicable law.
+      </p>
+    </article>
+
+    <article class="q" id="is-pbs-security">
+      <h3>
+        Is PBS necessarily a security?
+      </h3>
+
+      <div class="answer-status not-determined">
+        Not finally determined here
+      </div>
+
+      <p>
+        No final classification is asserted on this page.
+        Regulatory treatment depends on the actual instrument and
+        transaction, including its terms, participants, governance
+        rights, economic structure, offering method, and applicable
+        jurisdiction.
+      </p>
+    </article>
+
+    <article class="q" id="dfi-position">
+      <h3>
+        What did Washington DFI actually say?
+      </h3>
+
+      <div class="answer-status regulator">
+        Regulator statement
+      </div>
+
+      <p>
+        In the correspondence supplied with this research project,
+        Washington DFI said that the contemplated PBS/MPS architecture
+        appeared to go beyond the laws administered by DFI and could
+        raise other legal issues, including property rights and
+        intellectual property.
+      </p>
+
+      <p>
+        DFI further explained that, to the extent the architecture
+        involves an offer or sale of securities, existing state and
+        federal securities requirements would apply.
+      </p>
+
+      <p>
+        DFI did not choose an appropriate regulatory pathway for bringing
+        PBS to market. It stated that this determination would need to be
+        made by the company, ideally after consultation with legal counsel.
+      </p>
+    </article>
+
+    <article class="q" id="howey-risk-capital">
+      <h3>
+        Why do both Howey and Washington's risk-capital test matter?
+      </h3>
+
+      <div class="answer-status regulator">
+        Regulatory context
+      </div>
+
+      <p>
+        DFI's correspondence states that the project's initial materials
+        included a Howey analysis and that, during the regulatory
+        discussions, DFI explained that a Washington securities analysis
+        should also include review of the risk-capital test.
+      </p>
+
+      <p>
+        The project subsequently developed its own risk-capital analysis.
+        That analysis is an author-side regulatory analysis and should not
+        be represented as a classification made by DFI.
+      </p>
+    </article>
+
+    <article class="q" id="governance">
+      <h3>
+        Why does governance matter?
+      </h3>
+
+      <div class="answer-status author-analysis">
+        Author analysis
+      </div>
+
+      <p>
+        The project's risk-capital analysis treats practical and actual
+        managerial control as a governance-dependent question. The
+        analysis examines matters such as voting rights, management
+        replacement, operational authority, vetoes over material
+        transactions, collective-action mechanisms, protocol upgrades,
+        and authority over fees or distributions.
+      </p>
+
+      <p>
+        Those factors become legally relevant only through the applicable
+        law and the facts of the actual governance arrangement.
+      </p>
+    </article>
+
+    <article class="q" id="oracle">
+      <h3>
+        What is the proposed Performance Oracle?
+      </h3>
+
+      <div class="answer-status proposed">
+        Proposed architecture
+      </div>
+
+      <p>
+        The Performance Oracle is the proposed empirical measurement
+        layer. Project materials describe it as taking domain-specific
+        performance evidence and producing information used by the
+        broader valuation and attribution architecture.
+      </p>
+
+      <p>
+        Related design materials describe independent verification,
+        anomaly detection, cross-validation, recalibration, and logged
+        correction processes as safeguards around measurement.
+      </p>
+    </article>
+
+    <article class="q" id="crypto">
+      <h3>
+        What does cryptographic anchoring prove?
+      </h3>
+
+      <div class="answer-status proposed">
+        Technical distinction
+      </div>
+
+      <p>
+        In the proposed design, cryptographic hashes and signatures are
+        intended to make later alteration detectable and associate records
+        with specified identities or submission events.
+      </p>
+
+      <p>
+        Record integrity is not the same question as factual truth.
+        A tamper-evident record can preserve an inaccurate, incomplete,
+        disputed, or legally insufficient assertion. External evidence,
+        validation, challenge, review, and correction procedures therefore
+        remain necessary.
+      </p>
+    </article>
+
+    <article class="q" id="contribution-right">
+      <h3>
+        Is a “contribution right” already an established property right?
+      </h3>
+
+      <div class="answer-status not-determined">
+        Proposed legal concept
+      </div>
+
+      <p>
+        No established universal property status is asserted here.
+        PBS/MPS materials use contribution rights as part of the proposed
+        architecture and discuss contractual and legislative paths for
+        recognizing economic interests connected to contributions.
+      </p>
+
+      <p>
+        Public materials should therefore describe a contribution right
+        as proposed unless a particular contract, statute, regulation,
+        judgment, or other binding authority establishes the relevant
+        legal interest.
+      </p>
+    </article>
+
+    <article class="q" id="privacy">
+      <h3>
+        Does pseudonymity eliminate identity and privacy obligations?
+      </h3>
+
+      <div class="answer-status proposed">
+        Proposed architecture
+      </div>
+
+      <p>
+        No. The design materials contemplate verified identity that need
+        not necessarily be publicly disclosed. That design objective does
+        not determine which privacy, identity, financial-regulation,
+        contractual, or sector-specific requirements apply to a production
+        implementation.
+      </p>
+    </article>
+
+    <article class="q" id="disputes">
+      <h3>
+        How are attribution and measurement disputes treated?
+      </h3>
+
+      <div class="answer-status proposed">
+        Proposed process
+      </div>
+
+      <p>
+        Project materials contemplate challenge, review, recalculation or
+        recalibration, updated distributions, and preservation of dispute
+        history in the audit trail.
+      </p>
+
+      <p>
+        These mechanisms describe intended architecture. They should not
+        be presented as an existing statutory or agency dispute-resolution
+        process.
+      </p>
+    </article>
+
+    <article class="q" id="implementation">
+      <h3>
+        Is the proposed architecture already deployed?
+      </h3>
+
+      <div class="answer-status not-determined">
+        Development status
+      </div>
+
+      <p>
+        The supplied formal-submission materials describe PBS/MPS as being
+        at an architectural and intellectual-property development stage at
+        the time of that submission.
+      </p>
+
+      <p>
+        Unless a particular implementation is independently established,
+        public Research Foundations pages should therefore describe the
+        Ledger, Oracle, Contribution Decomposition, royalty, identity,
+        governance, and examination functions as proposed design features.
+      </p>
+    </article>
+
+    <h2 id="regulatory-record">
+      The regulatory record is part of the evidence
+    </h2>
+
+    <p>
+      Project submissions and regulator responses should remain separate
+      source categories. That separation prevents a proposal submitted to
+      an agency from later being repeated as though the agency adopted it.
+    </p>
+
+    <ol class="flow">
+      <li>
+        <strong>Project proposes.</strong>
+        Technical, economic, mathematical, and legal materials describe
+        PBS/MPS and make project-side arguments.
+      </li>
+
+      <li>
+        <strong>Agency responds.</strong>
+        The agency's own correspondence establishes what the agency
+        actually said.
+      </li>
+
+      <li>
+        <strong>Public research distinguishes them.</strong>
+        Meritocrat.org can explain both without merging their authority.
+      </li>
+
+      <li>
+        <strong>Binding status remains fact-specific.</strong>
+        A research page should not manufacture a legal determination where
+        the available record does not contain one.
+      </li>
+    </ol>
+
+    <h2 id="dfi-boundary">
+      What the DFI correspondence establishes
+    </h2>
+
+    <ul>
+      <li>
+        DFI reviewed materials supplied in connection with PBS/MPS.
+      </li>
+
+      <li>
+        DFI said the architecture appeared to extend beyond the laws
+        administered by DFI and could raise other legal issues.
+      </li>
+
+      <li>
+        DFI identified property-right and intellectual-property questions
+        among those broader issues.
+      </li>
+
+      <li>
+        DFI said securities requirements apply to the extent an offer or
+        sale of securities is involved.
+      </li>
+
+      <li>
+        DFI indicated that both Howey and Washington's risk-capital test
+        should be considered in securities analysis.
+      </li>
+
+      <li>
+        DFI did not select the regulatory pathway for bringing PBS to
+        market.
+      </li>
+
+      <li>
+        DFI recommended engaging competent legal counsel given the
+        proposal's complexity.
+      </li>
+    </ul>
+
+    <h2 id="not-established">
+      What the regulatory record does not establish
+    </h2>
+
+    <p>
+      The supplied correspondence should not be represented as an
+      endorsement of PBS/MPS, a determination that the architecture is
+      technically valid, a final securities classification, approval of
+      a contribution-right theory, or selection of a path to market.
+    </p>
+
+    <div class="legal-notice">
+      <strong>Legal boundary:</strong>
+      This page organizes research and source distinctions. It does not
+      determine the classification of a security, establish a property
+      right, authorize an offering, or substitute for transaction-specific
+      legal analysis.
+    </div>
+
+    <h2 id="logic">
+      The legal logic layer
+    </h2>
+
+    <p>
+      Within the Research Foundations circuit, law sits downstream from
+      provenance and measurement. Before an institution can decide what
+      legal consequence should attach to a contribution, the framework
+      first has to identify what was contributed, determine what evidence
+      supports the record, and estimate what relationship the contribution
+      has to the relevant outcome.
+    </p>
+
+    <p>
+      Law then asks a different question: what legal significance, if any,
+      follows from those facts under the applicable authority?
+    </p>
+
+    <div class="note">
+      <strong>Do not collapse the layers:</strong>
+      provenance establishes an evidentiary claim; measurement estimates
+      an effect; attribution assigns analytical significance; policy
+      proposes a response; law determines which rights, duties, limits,
+      classifications, and procedures actually apply.
+    </div>
+
+    <div class="status">
+      <strong>Status:</strong>
+      Research and proposed architecture. No agency endorsement is
+      claimed. Legal classification, enforceability, compliance, and
+      regulatory obligations depend on the applicable facts and law.
+    </div>
+
+    <nav
+      class="related"
+      aria-label="Research Foundations"
+    >
+      <strong>Continue through the foundations:</strong>
+      <br>
+
+      <a href="/research/foundations/why-provenance/">
+        Why Provenance?
+      </a>
+      ·
+
+      <a href="/research/foundations/merit-and-desert/">
+        Merit and Desert
+      </a>
+      ·
+
+      <a href="/research/foundations/advantage-laundering/">
+        Advantage Laundering
+      </a>
+      ·
+
+      <a href="/research/foundations/markets-and-incentives/">
+        Markets and Incentives
+      </a>
+      ·
+
+      <a href="/research/foundations/measurement-and-limits/">
+        Measurement and Limits
+      </a>
+      ·
+
+      <a
+        href="/research/foundations/policy-law-regulation/"
+        aria-current="page"
+      >
+        Policy, Law and Regulation
+      </a>
+      ·
+
+      <a href="/research/foundations/glossary/">
+        Glossary
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    Research and proposed framework.
+    Not legal, financial, or investment advice.
+  </footer>
+</body>
+</html>
