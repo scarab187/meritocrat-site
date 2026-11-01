@@ -1,3 +1,565 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Glossary | Meritocrat.org</title><meta name="description" content="Core terms used across the Meritocrat.org research network."><meta name="robots" content="index,follow,max-snippet:-1"><link rel="canonical" href="https://meritocrat.org/research/foundations/glossary/"><style>
-:root{--navy:#1A2744;--gold:#C9982E;--warm:#F8F6F1;--ink:#1C1C1C;--muted:#5d6470;--line:#d9d5ca}*{box-sizing:border-box}body{margin:0;font:17px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}header{background:var(--navy);color:white;padding:16px 20px}header a{color:white;text-decoration:none;font-weight:800}main{max-width:900px;margin:auto;padding:48px 22px}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;color:var(--navy)}h2{margin-top:2.8rem;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:.35rem}h3{color:var(--navy);margin-top:2rem}a{color:#704f00}.lede{font-size:1.18rem;color:#3f4650}.status,.note{border-left:4px solid var(--gold);background:var(--warm);padding:14px 18px;margin:22px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}.card{border:1px solid var(--line);padding:18px;border-radius:7px}.card a{font-weight:750}.eyebrow{color:#8a6511;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:800}.related{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line)}footer{background:var(--warm);padding:24px;text-align:center;color:var(--muted);font-size:.9rem}code{background:#f4f4f4;padding:.1em .3em}dt{font-weight:800;color:var(--navy);margin-top:1rem}dd{margin-left:0}.q{scroll-margin-top:20px}ul{padding-left:1.3rem}@media(max-width:600px){main{padding-top:32px}}
-</style></head><body><header><a href="index.html">MERITOCRAT.ORG / RESEARCH FOUNDATIONS</a></header><main><p class="eyebrow">Reference</p><h1>Glossary</h1><p class="lede">Core terms used across the Meritocrat.org research network.</p><dl><dt id="meritocratic-provenance-system-mps">Meritocratic Provenance System (MPS)</dt><dd>Proposed institutional framework for tracing, assessing, and correcting non-meritocratic inputs while preserving market information and incentives.</dd><dt id="provenance">Provenance</dt><dd>The traceable causal history of an economic outcome or contribution.</dd><dt id="provenance-auditing">Provenance Auditing</dt><dd>Proposed assessment of causal inputs to an economic outcome, expressed probabilistically rather than as perfect reconstruction.</dd><dt id="advantage-index">Advantage Index</dt><dd>Proposed estimate of the proportion of an economic return attributed to non-meritocratic inputs.</dd><dt id="provenance-backed-securities-pbs">Provenance-Backed Securities (PBS)</dt><dd>Proposed instrument layer linking economic claims to provenance-verified contributions or assets.</dd><dt id="provenance-ledger">Provenance Ledger</dt><dd>Proposed record layer for contribution, identity, timestamp, evidence, and context.</dd><dt id="performance-oracle">Performance Oracle</dt><dd>Proposed measurement layer for domain-specific performance evidence.</dd><dt id="contribution-decomposition">Contribution Decomposition</dt><dd>Proposed process for estimating the marginal, interacting, and time-dependent value of contributions.</dd><dt id="persistence">Persistence</dt><dd>The modeled continuation of a contribution’s influence over time.</dd><dt id="synergy">Synergy</dt><dd>Additional modeled value associated with contributions acting together rather than separately.</dd><dt id="epistemic-humility">Epistemic Humility</dt><dd>Design principle requiring uncertainty in provenance estimates to be acknowledged and reflected in the strength of resulting action.</dd></dl><nav class="related" aria-label="Knowledge network"><a href="why-provenance.html">Why Provenance?</a> · <a href="merit-and-desert.html">Merit and Desert</a> · <a href="advantage-laundering.html">Advantage Laundering</a> · <a href="markets-and-incentives.html">Markets and Incentives</a> · <a href="measurement-and-limits.html">Measurement and Limits</a> · <a href="policy-law-regulation.html">Policy, Law and Regulation</a></nav></main><footer>Research and proposed framework. Not legal, financial, or investment advice.</footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Glossary | Meritocrat.org</title>
+
+<meta
+  name="description"
+  content="Definitions of core concepts used across the Meritocrat.org research foundations, including provenance, meritocracy, advantage laundering, MPS, PBS, contribution measurement, and regulatory terminology."
+>
+
+<meta name="robots" content="index,follow,max-snippet:-1">
+
+<link
+  rel="canonical"
+  href="https://meritocrat.org/research/foundations/glossary/"
+>
+
+<style>
+:root{
+  --navy:#1A2744;
+  --gold:#C9982E;
+  --warm:#F8F6F1;
+  --ink:#1C1C1C;
+  --muted:#5d6470;
+  --line:#d9d5ca
+}
+
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font:17px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:#fff
+}
+
+header{
+  background:var(--navy);
+  color:white;
+  padding:16px 20px
+}
+
+header a{
+  color:white;
+  text-decoration:none;
+  font-weight:800
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:48px 22px
+}
+
+h1{
+  font-size:clamp(2rem,5vw,3.3rem);
+  line-height:1.1;
+  color:var(--navy)
+}
+
+h2{
+  margin-top:2.8rem;
+  color:var(--navy);
+  border-bottom:2px solid var(--gold);
+  padding-bottom:.35rem
+}
+
+h3{
+  color:var(--navy);
+  margin-top:2rem
+}
+
+a{
+  color:#704f00
+}
+
+.lede{
+  font-size:1.18rem;
+  color:#3f4650
+}
+
+.status,
+.note{
+  border-left:4px solid var(--gold);
+  background:var(--warm);
+  padding:14px 18px;
+  margin:22px 0
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px
+}
+
+.card{
+  border:1px solid var(--line);
+  padding:18px;
+  border-radius:7px
+}
+
+.card a{
+  font-weight:750
+}
+
+.eyebrow{
+  color:#8a6511;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.75rem;
+  font-weight:800
+}
+
+.related{
+  margin-top:3rem;
+  padding-top:1.2rem;
+  border-top:1px solid var(--line)
+}
+
+footer{
+  background:var(--warm);
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem
+}
+
+code{
+  background:#f4f4f4;
+  padding:.1em .3em
+}
+
+dl{
+  margin-top:2rem
+}
+
+dt{
+  font-weight:800;
+  color:var(--navy);
+  margin-top:1.35rem;
+  scroll-margin-top:20px
+}
+
+dd{
+  margin-left:0;
+  margin-top:.15rem
+}
+
+.q{
+  scroll-margin-top:20px
+}
+
+ul{
+  padding-left:1.3rem
+}
+
+@media(max-width:600px){
+  main{
+    padding-top:32px
+  }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Meritocrat.org Research Foundations Glossary",
+  "description": "Definitions of core concepts used across the Meritocrat.org research foundations.",
+  "url": "https://meritocrat.org/research/foundations/glossary/"
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">MERITOCRAT.ORG / RESEARCH FOUNDATIONS</a>
+</header>
+
+<main>
+
+<p class="eyebrow">Reference</p>
+
+<h1>Glossary</h1>
+
+<p class="lede">
+  Core terms used across the Meritocrat.org research network,
+  including the normative, institutional, technical, and
+  regulatory concepts used in the MPS/PBS framework.
+</p>
+
+<div class="note">
+  <strong>Reading note:</strong>
+  Terms identified as proposed describe concepts, models, or
+  architecture within the research framework. Their inclusion
+  here does not establish legal status, regulatory approval,
+  technical validation, or empirical consensus.
+</div>
+
+
+<h2 id="foundational-concepts">Foundational Concepts</h2>
+
+<dl>
+
+<dt id="provenance">Provenance</dt>
+<dd>
+  The traceable causal history of an economic outcome or
+  contribution, including the inputs that helped produce it.
+</dd>
+
+<dt id="meritocratic-provenance">Meritocratic Provenance</dt>
+<dd>
+  The portion of an outcome's causal history attributed within
+  the framework to agency-related inputs such as effort,
+  cultivated skill, innovation, creativity, judgment, or
+  investment in one's own capacities.
+</dd>
+
+<dt id="non-meritocratic-provenance">Non-Meritocratic Provenance</dt>
+<dd>
+  The portion of an outcome's causal history attributed within
+  the framework to morally arbitrary or antecedent conditions
+  such as inherited resources, network position, geographic
+  circumstance, or institutional favoritism.
+</dd>
+
+<dt id="meritocratic-legitimacy">Meritocratic Legitimacy</dt>
+<dd>
+  The proposed normative standard under which rewards should
+  reasonably track relevant contribution and the background
+  conditions of competition should be sufficiently fair for
+  those contributions to be meaningfully attributable to agency.
+</dd>
+
+<dt id="weak-meritocracy">Weak Meritocracy</dt>
+<dd>
+  The proposition that rewards track measured performance
+  without asking how the capacity to perform was produced.
+</dd>
+
+<dt id="strong-meritocracy">Strong Meritocracy</dt>
+<dd>
+  The stronger proposition that rewards should track performance
+  that is, as far as practicable, attributable to agency rather
+  than merely to antecedent advantage.
+</dd>
+
+<dt id="advantage-laundering">Advantage Laundering</dt>
+<dd>
+  The proposed process by which morally arbitrary or structural
+  advantages pass through legitimate market processes and
+  emerge as outcomes that appear wholly attributable to
+  individual merit.
+</dd>
+
+<dt id="provenance-correction">Provenance Correction</dt>
+<dd>
+  The proposed practice of identifying and responding to
+  non-meritocratic inputs or their effects rather than treating
+  inequality itself as the sole object of correction.
+</dd>
+
+</dl>
+
+
+<h2 id="mps-institutional-framework">MPS Institutional Framework</h2>
+
+<dl>
+
+<dt id="meritocratic-provenance-system-mps">
+  Meritocratic Provenance System (MPS)
+</dt>
+<dd>
+  Proposed institutional framework for tracing, assessing, and
+  correcting non-meritocratic inputs while preserving market
+  information and incentives. Its analytical components include
+  Provenance Auditing, Advantage Indexing, Corrective
+  Redistribution, and Incentive Preservation.
+</dd>
+
+<dt id="provenance-auditing">Provenance Auditing</dt>
+<dd>
+  Proposed systematic assessment of the causal inputs to an
+  economic outcome, expressed probabilistically rather than as
+  a claim of perfect causal reconstruction.
+</dd>
+
+<dt id="advantage-indexing">Advantage Indexing</dt>
+<dd>
+  Proposed process for quantifying the degree of
+  non-meritocratic advantage identified through provenance
+  assessment.
+</dd>
+
+<dt id="advantage-index">Advantage Index</dt>
+<dd>
+  Proposed estimate of the proportion of an economic return
+  attributable to non-meritocratic inputs.
+</dd>
+
+<dt id="corrective-redistribution">Corrective Redistribution</dt>
+<dd>
+  The proposed MPS component that translates provenance
+  assessments into institutional corrections, with emphasis
+  where practicable on changing the processes that produce
+  advantage rather than simply equalizing outcomes after the
+  fact.
+</dd>
+
+<dt id="incentive-preservation">Incentive Preservation</dt>
+<dd>
+  The MPS design constraint that corrections should target
+  non-meritocratic inputs while preserving rewards for genuine
+  productive contribution and the informational properties of
+  market processes.
+</dd>
+
+<dt id="epistemic-humility">Epistemic Humility</dt>
+<dd>
+  Design principle requiring uncertainty in provenance or
+  contribution estimates to be acknowledged and reflected in
+  the strength of resulting inferences or actions.
+</dd>
+
+<dt id="counterfactual-problem">Counterfactual Problem</dt>
+<dd>
+  The measurement problem of estimating what an outcome would
+  have been in the absence of a particular contribution,
+  advantage, or other causal input.
+</dd>
+
+</dl>
+
+
+<h2 id="pbs-technical-architecture">PBS Technical Architecture</h2>
+
+<dl>
+
+<dt id="provenance-backed-securities-pbs">
+  Provenance-Backed Securities (PBS)
+</dt>
+<dd>
+  Proposed instrument layer linking economic claims to
+  provenance-verified contributions or assets and associated
+  performance information. The term describes the framework's
+  proposed instrument concept and does not itself establish a
+  legal classification.
+</dd>
+
+<dt id="provenance-ledger">Provenance Ledger</dt>
+<dd>
+  Proposed evidentiary record layer for documenting
+  contributions and associated identity, timestamp, evidence,
+  and provenance context.
+</dd>
+
+<dt id="performance-oracle">Performance Oracle</dt>
+<dd>
+  Proposed measurement layer that ingests domain-specific
+  performance evidence and produces information that can
+  participate in contribution valuation.
+</dd>
+
+<dt id="contribution">Contribution</dt>
+<dd>
+  Within the technical framework, an input considered for
+  attribution when it is identifiable to a contributor,
+  materially affects an observed outcome, and has modeled
+  persistence over time.
+</dd>
+
+<dt id="contribution-space">Contribution Space</dt>
+<dd>
+  The modeled set of contributions considered by the
+  contribution-decomposition framework.
+</dd>
+
+<dt id="contribution-decomposition">Contribution Decomposition</dt>
+<dd>
+  Proposed analytical process connecting documented
+  contributions with measurable outcomes by estimating marginal,
+  interacting, and time-dependent contribution value.
+</dd>
+
+<dt id="marginal-contribution">Marginal Contribution</dt>
+<dd>
+  The change in modeled value associated with the presence of a
+  contribution relative to a specified set of other
+  contributions.
+</dd>
+
+<dt id="approximate-marginal-contribution">
+  Approximate Marginal Contribution
+</dt>
+<dd>
+  An estimate of marginal contribution obtained when exact
+  removal or isolation is impractical, including approaches that
+  measure performance changes after a contribution is masked,
+  perturbed, or down-weighted.
+</dd>
+
+<dt id="persistence">Persistence</dt>
+<dd>
+  The modeled continuation of a contribution's influence over
+  time.
+</dd>
+
+<dt id="persistence-function">Persistence Function</dt>
+<dd>
+  A proposed mathematical representation of how a
+  contribution's influence continues or decays over time.
+</dd>
+
+<dt id="synergy">Synergy</dt>
+<dd>
+  Additional modeled value associated with contributions acting
+  together rather than separately.
+</dd>
+
+<dt id="royalty-flow">Royalty Flow</dt>
+<dd>
+  Proposed mechanism for translating modeled contribution
+  allocations into payments or economic distributions to
+  contributors.
+</dd>
+
+<dt id="budget-balance">Budget Balance</dt>
+<dd>
+  Constraint within the proposed royalty model requiring
+  aggregate royalty allocations not to exceed total modeled
+  value unless an explicit external funding or subsidy mechanism
+  is introduced.
+</dd>
+
+<dt id="cryptographic-anchoring">Cryptographic Anchoring</dt>
+<dd>
+  Proposed use of cryptographic hashes and digital signatures to
+  make later modification of records detectable and to associate
+  records with verified identities. Record integrity does not by
+  itself establish the truth of the original assertion.
+</dd>
+
+</dl>
+
+
+<h2 id="market-and-incentive-concepts">Market and Incentive Concepts</h2>
+
+<dl>
+
+<dt id="price-signal">Price Signal</dt>
+<dd>
+  Market information conveyed through prices about relative
+  scarcity, demand, and valuation. The MPS framework treats the
+  preservation of price signals as a design constraint rather
+  than proposing centrally determined market prices.
+</dd>
+
+<dt id="voluntary-exchange">Voluntary Exchange</dt>
+<dd>
+  Exchange entered by informed participants without compulsion.
+  The framework adopts a presumption in favor of voluntary
+  exchange while allowing the provenance of bargaining
+  positions and productive capacities to remain an object of
+  analysis.
+</dd>
+
+<dt id="transaction-costs">Transaction Costs</dt>
+<dd>
+  Costs associated with activities such as measurement,
+  information gathering, administration, contracting, and
+  enforcement. The MPS framework recognizes provenance
+  assessment and administration as sources of such costs.
+</dd>
+
+</dl>
+
+
+<h2 id="legal-and-regulatory-concepts">Legal and Regulatory Concepts</h2>
+
+<dl>
+
+<dt id="contribution-right">Contribution Right</dt>
+<dd>
+  A proposed economic or legal interest associated with a
+  documented contribution and the value attributed to it.
+  Within the public research framework, the term should not be
+  read as an already established property right absent an
+  applicable contract, statute, regulation, or binding legal
+  determination.
+</dd>
+
+<dt id="risk-capital-test">Washington Risk Capital Test</dt>
+<dd>
+  A Washington securities-law framework referenced in the
+  project's regulatory analysis under RCW 21.20.005(17)(a).
+  The project materials analyze investment or other
+  consideration, risk capital, expectation of valuable benefit,
+  and practical and actual managerial control. Application to
+  any particular PBS instrument is fact-specific.
+</dd>
+
+<dt id="practical-and-actual-managerial-control">
+  Practical and Actual Managerial Control
+</dt>
+<dd>
+  The managerial-control concept relevant to the project's
+  analysis of Washington's risk-capital test. The project
+  materials treat voting rights, operational authority,
+  management replacement, transaction vetoes, collective
+  action, protocol authority, and control of distribution
+  structures as potentially relevant facts.
+</dd>
+
+<dt id="regulatory-classification">Regulatory Classification</dt>
+<dd>
+  The legal characterization of a specific instrument under
+  applicable law. The Meritocrat.org research framework does
+  not treat publication of the PBS concept as establishing a
+  final securities or other regulatory classification.
+</dd>
+
+</dl>
+
+
+<div class="status">
+  <strong>Status note:</strong>
+  This glossary defines terminology used by the Meritocrat.org
+  research framework. Definitions of proposed concepts describe
+  the framework itself and should not be read as statements of
+  academic consensus, regulatory approval, legal classification,
+  or production-scale technical validation.
+</div>
+
+
+<nav class="related" aria-label="Knowledge network">
+
+  <a href="why-provenance.html">Why Provenance?</a>
+  ·
+  <a href="merit-and-desert.html">Merit and Desert</a>
+  ·
+  <a href="advantage-laundering.html">Advantage Laundering</a>
+  ·
+  <a href="markets-and-incentives.html">Markets and Incentives</a>
+  ·
+  <a href="measurement-and-limits.html">Measurement and Limits</a>
+  ·
+  <a href="policy-law-regulation.html">Policy, Law and Regulation</a>
+
+</nav>
+
+</main>
+
+<footer>
+  Research and proposed framework. Not legal, financial, or
+  investment advice.
+</footer>
+
+</body>
+</html>
