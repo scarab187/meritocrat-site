@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Markets and Incentives | Meritocrat.org</title>
+
+  <meta
+    name="description"
+    content="The MPS framework treats market prices, voluntary exchange, productive incentives, and decentralized information as constraints that provenance correction should preserve rather than replace."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-snippet:-1"
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/research/foundations/markets-and-incentives/"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Markets and Incentives",
+    "description": "A research-foundations explanation of why the Meritocratic Provenance System is designed to preserve decentralized prices, voluntary exchange, and productive incentives.",
+    "url": "https://meritocrat.org/research/foundations/markets-and-incentives/",
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": "Meritocrat.org Research Foundations",
+      "url": "https://meritocrat.org/research/foundations/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meritocrat.org",
+      "url": "https://meritocrat.org/"
+    },
+    "about": [
+      "Markets",
+      "Incentives",
+      "Price signals",
+      "Voluntary exchange",
+      "Provenance",
+      "Meritocratic Provenance System"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1A2744;
+      --gold: #C9982E;
+      --gold-dark: #8A6511;
+      --warm: #F8F6F1;
+      --ink: #1C1C1C;
+      --muted: #5D6470;
+      --line: #D9D5CA;
+      --soft-blue: #F1F4F9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font: 17px/1.7 system-ui, -apple-system, "Segoe UI",
+            Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 16px 20px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 48px 22px 64px;
+    }
+
+    h1 {
+      margin: .35rem 0 1rem;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      padding-bottom: .35rem;
+      border-bottom: 2px solid var(--gold);
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin-top: 1.8rem;
+    }
+
+    a {
+      color: #704F00;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .lede {
+      color: #3F4650;
+      font-size: 1.18rem;
+      max-width: 790px;
+    }
+
+    .note,
+    .status,
+    .principle {
+      border-left: 4px solid var(--gold);
+      background: var(--warm);
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+
+    .principle {
+      background: var(--soft-blue);
+      border-left-color: var(--navy);
+    }
+
+    .note p:last-child,
+    .principle p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 21px;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sequence {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .sequence div {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 16px 10px;
+      text-align: center;
+      background: white;
+      color: var(--navy);
+      font-weight: 750;
+    }
+
+    .questions li {
+      margin: .75rem 0;
+    }
+
+    .related {
+      margin-top: 3.5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      line-height: 2;
+    }
+
+    footer {
+      background: var(--warm);
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 34px;
+      }
+
+      .grid,
+      .sequence {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/research/foundations/">
+    MERITOCRAT.ORG / RESEARCH FOUNDATIONS
+  </a>
+</header>
+
+<main>
+
+  <p class="eyebrow">Foundation 4</p>
+
+  <h1>Markets and Incentives</h1>
+
+  <p class="lede">
+    A provenance framework does not have to choose between correcting
+    non-meritocratic advantage and preserving markets. The MPS proposal
+    treats decentralized prices, voluntary exchange, productive incentives,
+    and the information carried through markets as constraints that
+    provenance correction should preserve rather than replace.
+  </p>
+
+  <div class="note">
+    <strong>Core idea:</strong>
+    MPS is proposed as a market-embedded corrective framework.
+    Its objective is not to centrally determine prices or equalize outcomes,
+    but to examine and, where justified, correct non-meritocratic inputs
+    while retaining rewards for genuine contribution.
+  </div>
+
+
+  <h2 id="why-markets">Why preserve markets?</h2>
+
+  <p>
+    Markets coordinate activity among people who possess different
+    information, preferences, resources, abilities, and opportunities.
+    Prices provide a decentralized signal through which economic actors
+    respond to scarcity, demand, and productive possibilities.
+  </p>
+
+  <p>
+    The MPS framework therefore does not treat the price system as an
+    obstacle to meritocratic justice. It treats the informational function
+    of prices as something an institutional correction must respect.
+  </p>
+
+  <p>
+    This distinction matters. A system designed to correct provenance by
+    replacing decentralized economic decisions with centrally determined
+    valuations would face a fundamentally different information problem
+    from a system designed to examine the conditions under which people
+    enter market competition.
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>
+        The proposed target is the provenance of market inputs,
+        not the abolition of market allocation.
+      </strong>
+    </p>
+  </div>
+
+
+  <h2 id="prices">What prices tell us</h2>
+
+  <p>
+    A market price can communicate economically important information.
+    It can indicate what buyers are willing to pay, what sellers are willing
+    to accept, where goods or skills are scarce, and where economic demand
+    exists.
+  </p>
+
+  <p>
+    But a price does not, by itself, contain a complete causal history of
+    the thing being priced.
+  </p>
+
+  <p>
+    A wage can reflect the current market value of a worker's productive
+    capacity without separately identifying how much of that capacity arose
+    from effort, education, inherited resources, social networks, geography,
+    or institutional opportunity.
+  </p>
+
+  <p>
+    The provenance argument therefore adds a second analytical layer rather
+    than rejecting the first:
+  </p>
+
+  <div class="sequence" aria-label="Market and provenance analysis">
+    <div>Market Input</div>
+    <div>Price Signal</div>
+    <div>Economic Reward</div>
+    <div>Provenance Analysis</div>
+  </div>
+
+  <p>
+    Market valuation asks what an input is worth in exchange.
+    Provenance analysis asks how the capacity or asset being valued came
+    to exist and which causal inputs are relevant to a claim of desert.
+  </p>
+
+
+  <h2 id="knowledge">The knowledge problem</h2>
+
+  <p>
+    The comparative-theory framework treats the problem of dispersed
+    economic knowledge as a serious constraint on institutional design.
+    Individuals possess localized information about their circumstances,
+    opportunities, preferences, and productive possibilities that cannot
+    simply be assembled into a complete central decision system.
+  </p>
+
+  <p>
+    MPS therefore does not propose that a provenance authority determine
+    what every product, worker, company, or investment should be worth.
+    The proposed auditing function concerns patterns and causal inputs
+    relevant to advantage rather than centralized direction of production
+    and exchange.
+  </p>
+
+
+  <h2 id="auditing">Auditing versus allocation</h2>
+
+  <p>
+    A central distinction in the framework is the difference between
+    <strong>verifying inputs</strong> and <strong>allocating resources</strong>.
+  </p>
+
+  <div class="grid">
+
+    <section class="card">
+      <h3>Allocation</h3>
+      <p>
+        Determines where resources should go, what should be produced,
+        or what prices and quantities should prevail.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Provenance auditing</h3>
+      <p>
+        Examines the causal inputs to an economic position or reward and
+        estimates the role of meritocratic and non-meritocratic factors.
+      </p>
+    </section>
+
+  </div>
+
+  <p>
+    In the proposed framework, provenance auditing occupies the second
+    category. Market participants would continue making decentralized
+    choices about production, exchange, investment, employment, and
+    consumption.
+  </p>
+
+
+  <h2 id="incentives">Why incentives matter</h2>
+
+  <p>
+    Productive incentives are not treated as a secondary consideration.
+    Incentive Preservation is one of the four stated components of the
+    Meritocratic Provenance System.
+  </p>
+
+  <p>
+    The central design constraint is that an intervention intended to make
+    economic rewards more meritocratic should not simultaneously destroy
+    the incentive to create the productive contribution that deserves the
+    reward.
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>
+        Correct non-meritocratic advantage without suppressing genuine
+        productive contribution.
+      </strong>
+    </p>
+  </div>
+
+  <p>
+    That distinction separates the framework's stated objective from a
+    policy that simply compresses the distribution of outcomes.
+  </p>
+
+
+  <h2 id="merit-reward">High rewards can remain legitimate</h2>
+
+  <p>
+    The framework is not opposed to large economic rewards as such.
+    A large return can remain consistent with the theory when it is tied
+    to genuine contribution.
+  </p>
+
+  <p>
+    Innovation, cultivated skill, entrepreneurial judgment, creative work,
+    productive effort, and investment in one's own capacities remain
+    economically meaningful inputs.
+  </p>
+
+  <p>
+    The question MPS adds is whether a reward attributed to those inputs
+    also contains a component produced by antecedent advantages that cannot
+    be attributed to the recipient in the same way.
+  </p>
+
+
+  <h2 id="clearer-signals">The proposed incentive argument</h2>
+
+  <p>
+    The MPS foundations argue that distinguishing meritocratic contribution
+    from non-meritocratic advantage could make reward signals more closely
+    aligned with genuine productive contribution.
+  </p>
+
+  <p>
+    Under that argument, indiscriminate correction risks weakening the
+    reward for both genuine contribution and arbitrary advantage.
+    Provenance-sensitive correction instead attempts to distinguish between
+    them.
+  </p>
+
+  <div class="grid">
+
+    <section class="card">
+      <h3>What remains rewarded</h3>
+      <p>
+        Effort, cultivated skill, useful innovation, creativity,
+        entrepreneurial judgment, and productive contribution.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>What becomes visible</h3>
+      <p>
+        The estimated contribution of inherited, network, geographic,
+        institutional, or other non-meritocratic advantages to the
+        resulting economic position.
+      </p>
+    </section>
+
+  </div>
+
+
+  <h2 id="voluntary">Voluntary exchange</h2>
+
+  <p>
+    The framework adopts a presumption in favor of informed voluntary
+    exchange.
+  </p>
+
+  <p>
+    Voluntary transactions can create value for the parties involved,
+    and the MPS proposal does not treat the existence of unequal outcomes
+    from exchange as sufficient evidence that the exchange should be
+    overridden.
+  </p>
+
+  <p>
+    At the same time, the voluntariness of a transaction does not answer
+    every provenance question. Bargaining position, access to opportunities,
+    productive capacity, and ownership entering an exchange may themselves
+    have causal histories.
+  </p>
+
+  <p>
+    The framework therefore distinguishes the legitimacy of an exchange
+    from the provenance of the positions the parties bring into it.
+  </p>
+
+
+  <h2 id="entrepreneurship">Entrepreneurship</h2>
+
+  <p>
+    Entrepreneurial discovery is treated within the comparative framework
+    as a potentially meritocratic input. Recognizing an opportunity,
+    exercising judgment, creating a new product, and successfully organizing
+    productive activity can ground a claim to reward.
+  </p>
+
+  <p>
+    Provenance analysis does not eliminate that claim.
+    It asks whether access to the opportunity was also affected by factors
+    such as capital resources, information networks, or institutional
+    relationships that should be analytically distinguished from the
+    entrepreneurial contribution itself.
+  </p>
+
+  <div class="note">
+    <strong>Important distinction:</strong>
+    examining the provenance of entrepreneurial opportunity is not the same
+    as denying the productive value of entrepreneurial discovery.
+  </div>
+
+
+  <h2 id="correction">Correcting inputs instead of setting outcomes</h2>
+
+  <p>
+    Where possible, the MPS proposal directs intervention toward the
+    production of advantage rather than toward a predetermined final
+    distribution.
+  </p>
+
+  <p>
+    The foundations describe access expansion in areas such as education,
+    capital markets, and professional licensing, along with transparency
+    and competition-oriented measures, as examples of the broader
+    corrective approach.
+  </p>
+
+  <p>
+    The intended distinction is between changing the conditions of
+    competition and instructing the market what final result it must
+    produce.
+  </p>
+
+
+  <h2 id="tax-transfer">Why this differs from simple tax-and-transfer</h2>
+
+  <p>
+    Conventional redistribution generally begins after market outcomes
+    have occurred. Income or wealth is observed and then modified through
+    taxation and transfers.
+  </p>
+
+  <p>
+    The proposed provenance approach begins with a different question:
+    which inputs helped generate the outcome, and which of those inputs
+    should count as meritocratic?
+  </p>
+
+  <p>
+    That difference is important for incentives because the framework's
+    stated objective is not to impose the same correction on rewards
+    regardless of their causal source.
+  </p>
+
+
+  <h2 id="costs">Transaction costs</h2>
+
+  <p>
+    Provenance systems themselves are not costless.
+  </p>
+
+  <p>
+    Auditing requires information. Measurement requires analytical
+    infrastructure. Advantage indexing requires models and assessment.
+    Corrective institutions require administration.
+  </p>
+
+  <p>
+    Those costs form a genuine feasibility constraint.
+    A provenance system cannot justify itself merely by identifying a
+    normative problem. A deployable system would also need to justify the
+    costs created by measurement and administration.
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>
+        Institutional correction must be evaluated against its own costs.
+      </strong>
+    </p>
+    <p>
+      The existence of provenance distortion does not establish that every
+      proposed mechanism for measuring or correcting it is efficient.
+    </p>
+  </div>
+
+
+  <h2 id="feedback">Feedback and adaptation</h2>
+
+  <p>
+    Incentive effects cannot simply be assumed in advance.
+    The MPS foundations therefore make ongoing assessment of behavioral
+    effects part of Incentive Preservation.
+  </p>
+
+  <p>
+    Corrective mechanisms are intended to be adjusted when evidence shows
+    that they create significant disincentive effects.
+  </p>
+
+  <p>
+    This makes incentive preservation an ongoing constraint on the system
+    rather than a one-time design claim.
+  </p>
+
+
+  <h2 id="limits">What remains to be established</h2>
+
+  <p>
+    The claim that provenance-sensitive correction can improve the
+    alignment between reward and genuine contribution is a theoretical
+    design argument.
+  </p>
+
+  <p>
+    Actual incentive effects would depend on institutional design,
+    measurement quality, the form and scale of correction, participant
+    behavior, and the economic environment in which the system operates.
+  </p>
+
+  <p>
+    The public foundations therefore should not treat favorable incentive
+    effects as already demonstrated empirically.
+  </p>
+
+
+  <h2 id="boundaries">What the framework does not propose</h2>
+
+  <ul class="questions">
+    <li>
+      It does not propose replacing decentralized markets with comprehensive
+      central planning.
+    </li>
+
+    <li>
+      It does not treat price signals as economically irrelevant.
+    </li>
+
+    <li>
+      It does not reject voluntary exchange merely because participants
+      begin from unequal positions.
+    </li>
+
+    <li>
+      It does not treat large rewards as inherently illegitimate.
+    </li>
+
+    <li>
+      It does not propose suppressing returns to genuine effort,
+      innovation, or productive contribution.
+    </li>
+
+    <li>
+      It does not assume that provenance auditing and corrective
+      administration are costless.
+    </li>
+  </ul>
+
+
+  <h2 id="conclusion">The underlying design principle</h2>
+
+  <div class="principle">
+    <p>
+      <strong>
+        Preserve the market's information function while improving the
+        provenance of the inputs entering market competition.
+      </strong>
+    </p>
+  </div>
+
+  <p>
+    In that formulation, markets and provenance correction are not
+    opposites. Markets remain responsible for decentralized coordination
+    and exchange. Provenance analysis adds a historical and causal inquiry
+    into the conditions that produced the inputs being rewarded.
+  </p>
+
+  <p>
+    The success of the framework therefore depends on satisfying both
+    objectives at once: reducing the influence of non-meritocratic
+    advantage while preserving the information, freedom of exchange, and
+    productive incentives that make decentralized markets useful.
+  </p>
+
+
+  <div class="status">
+    <strong>Status:</strong>
+    Design objective and theoretical argument. The MPS source materials
+    identify Incentive Preservation as a core constraint, but favorable
+    empirical incentive effects would require testing.
+  </div>
+
+
+  <nav class="related" aria-label="Research Foundations">
+    <strong>Continue through the foundations:</strong><br>
+
+    <a href="/research/foundations/why-provenance/">
+      Why Provenance?
+    </a>
+    ·
+
+    <a href="/research/foundations/merit-and-desert/">
+      Merit and Desert
+    </a>
+    ·
+
+    <a href="/research/foundations/advantage-laundering/">
+      Advantage Laundering
+    </a>
+    ·
+
+    <a href="/research/foundations/markets-and-incentives/"
+       aria-current="page">
+      Markets and Incentives
+    </a>
+    ·
+
+    <a href="/research/foundations/measurement-and-limits/">
+      Measurement and Limits
+    </a>
+    ·
+
+    <a href="/research/foundations/policy-law-regulation/">
+      Policy, Law and Regulation
+    </a>
+    ·
+
+    <a href="/research/foundations/glossary/">
+      Glossary
+    </a>
+  </nav>
+
+</main>
+
+<footer>
+  Research and proposed framework.
+  Not legal, financial, or investment advice.
+</footer>
+
+</body>
+</html>
