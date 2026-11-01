@@ -225,106 +225,180 @@
 <body data-id="0" class="bg-white">
   <app-icon data-id="1" hidden data-icon="landmark" data-palette="Yellow"></app-icon>
 
-  <!-- STICKY NAVIGATION -->
-  <header data-id="2" id="navbar-a1b2" class="fixed top-0 left-0 right-0 z-50 bg-navy transition-all duration-300">
-    <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
-      <a data-id="4" href="#hero-c3d4" class="flex items-center gap-2 text-white font-bold text-lg tracking-wide no-underline">
-        <svg data-id="5" class="seedling-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path data-id="6" d="M14 26V14" stroke="#C9982E" stroke-width="2.5" stroke-linecap="round"/>
-          <path data-id="7" d="M14 18C14 18 8 16 6 11C6 11 10 9 14 14" stroke="#C9982E" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path data-id="8" d="M14 14C14 14 20 12 22 7C22 7 18 5 14 10" stroke="#C9982E" stroke-width="2" stroke-linecap="round" fill="none"/>
+<!-- STICKY NAVIGATION -->
+  <header data-id="2"
+          id="navbar-a1b2"
+          class="fixed top-0 left-0 right-0 z-50 bg-navy transition-all duration-300">
+  
+    <div data-id="3"
+         class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+  
+      <!-- BRAND -->
+      <a data-id="4"
+         href="#hero-c3d4"
+         class="flex items-center gap-2 text-white font-bold text-lg tracking-wide no-underline">
+  
+        <svg data-id="5"
+             class="seedling-icon"
+             viewBox="0 0 28 28"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+  
+          <path data-id="6"
+                d="M14 26V14"
+                stroke="#C9982E"
+                stroke-width="2.5"
+                stroke-linecap="round"/>
+  
+          <path data-id="7"
+                d="M14 18C14 18 8 16 6 11C6 11 10 9 14 14"
+                stroke="#C9982E"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"/>
+  
+          <path data-id="8"
+                d="M14 14C14 14 20 12 22 7C22 7 18 5 14 10"
+                stroke="#C9982E"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"/>
         </svg>
+  
         <span data-id="9">MERITOCRATIC PARTY</span>
       </a>
+  
+  
+      <!-- DESKTOP NAVIGATION -->
       <nav data-id="10"
            id="desktop-nav-e5f6"
            class="hidden md:flex items-center gap-5">
-      
+  
         <a data-id="11"
            href="#solution-i9j0"
            class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
           Solution
         </a>
-      
+  
+        <!-- PBS LIFECYCLE -->
+        <a href="/pbs-lifecycle/"
+           class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
+          How It Works
+        </a>
+  
         <a data-id="13"
            href="#platform-k1l2"
            class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
           Platform
         </a>
-      
+  
         <a href="/washington-pbs-act/"
            class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
           Washington
         </a>
-      
+  
         <a href="/research/"
            class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
           Research
         </a>
-      
+  
         <a data-id="15"
            href="#about-o5p6"
            class="text-white/80 hover:text-gold text-sm font-medium transition-colors no-underline">
           About
         </a>
-      
+  
         <a data-id="16"
            href="#involved-q7r8"
            class="bg-gold text-navy font-bold text-sm px-4 py-2 rounded hover:bg-gold-dark transition-colors no-underline">
           Get Involved
         </a>
-      
+  
       </nav>
-      <button data-id="17" id="mobile-menu-btn-s9t0" class="md:hidden p-2 text-white" aria-label="Open menu">
-        <i data-id="18" data-lucide="menu" class="w-6 h-6"></i>
+  
+  
+      <!-- MOBILE MENU BUTTON -->
+      <button data-id="17"
+              id="mobile-menu-btn-s9t0"
+              class="md:hidden p-2 text-white"
+              aria-label="Open menu">
+        <i data-id="18"
+           data-lucide="menu"
+           class="w-6 h-6"></i>
       </button>
+  
     </div>
   </header>
-
+  
+  
   <!-- MOBILE MENU -->
-  <nav data-id="19" id="mobile-menu-u1v2" class="hidden fixed inset-0 bg-navy z-[60] flex flex-col p-6">
-    <div data-id="20" class="flex items-center justify-between mb-10">
-      <span data-id="21" class="text-white font-bold text-lg tracking-wide">MERITOCRATIC PARTY</span>
-      <button data-id="22" id="mobile-menu-close-w3x4" class="p-2 text-white" aria-label="Close menu">
-        <i data-id="23" data-lucide="x" class="w-6 h-6"></i>
+  <nav data-id="19"
+       id="mobile-menu-u1v2"
+       class="hidden fixed inset-0 bg-navy z-[60] flex flex-col p-6">
+  
+    <div data-id="20"
+         class="flex items-center justify-between mb-10">
+  
+      <span data-id="21"
+            class="text-white font-bold text-lg tracking-wide">
+        MERITOCRATIC PARTY
+      </span>
+  
+      <button data-id="22"
+              id="mobile-menu-close-w3x4"
+              class="p-2 text-white"
+              aria-label="Close menu">
+        <i data-id="23"
+           data-lucide="x"
+           class="w-6 h-6"></i>
       </button>
+  
     </div>
-    <div data-id="24" class="flex flex-col gap-5">
-    
+  
+  
+    <div data-id="24"
+         class="flex flex-col gap-5">
+  
       <a data-id="26"
          href="#solution-i9j0"
          class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
         Solution
       </a>
-    
+  
+      <!-- PBS LIFECYCLE -->
+      <a href="/pbs-lifecycle/"
+         class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
+        How It Works
+      </a>
+  
       <a data-id="27"
          href="#platform-k1l2"
          class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
         Platform
       </a>
-    
+  
       <a href="/washington-pbs-act/"
          class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
         Washington
       </a>
-    
+  
       <a href="/research/"
          class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
         Research
       </a>
-    
+  
       <a data-id="29"
          href="#about-o5p6"
          class="mobile-nav-link text-white text-xl font-medium hover:text-gold transition-colors no-underline">
         About
       </a>
-    
+  
       <a data-id="30"
          href="#involved-q7r8"
          class="mobile-nav-link bg-gold text-navy font-bold text-xl px-5 py-3 rounded text-center hover:bg-gold-dark transition-colors no-underline mt-4">
         Get Involved
       </a>
-    
+  
     </div>
   </nav>
 
