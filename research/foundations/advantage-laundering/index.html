@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Advantage Laundering | Meritocrat.org</title>
+
+  <meta
+    name="description"
+    content="Advantage laundering describes how morally arbitrary advantages can pass through legitimate market processes and emerge as apparently deserved individual outcomes."
+  >
+
+  <meta
+    name="robots"
+    content="index,follow,max-snippet:-1"
+  >
+
+  <link
+    rel="canonical"
+    href="https://meritocrat.org/research/foundations/advantage-laundering/"
+  >
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Advantage Laundering",
+    "description": "A research-foundations explanation of how antecedent advantages can pass through market processes and emerge as apparently deserved individual outcomes.",
+    "url": "https://meritocrat.org/research/foundations/advantage-laundering/",
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": "Meritocrat.org Research Foundations",
+      "url": "https://meritocrat.org/research/foundations/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Meritocrat.org",
+      "url": "https://meritocrat.org/"
+    },
+    "about": [
+      "Advantage laundering",
+      "Provenance",
+      "Meritocracy",
+      "Economic desert",
+      "Meritocratic Provenance System"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1A2744;
+      --gold: #C9982E;
+      --gold-dark: #8A6511;
+      --warm: #F8F6F1;
+      --ink: #1C1C1C;
+      --muted: #5D6470;
+      --line: #D9D5CA;
+      --soft-blue: #F1F4F9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font: 17px/1.7 system-ui, -apple-system, "Segoe UI",
+            Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 16px 20px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 48px 22px 64px;
+    }
+
+    h1 {
+      margin: .35rem 0 1rem;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      padding-bottom: .35rem;
+      border-bottom: 2px solid var(--gold);
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #704F00;
+    }
+
+    strong {
+      color: var(--navy);
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .lede {
+      color: #3F4650;
+      font-size: 1.18rem;
+      max-width: 790px;
+    }
+
+    .note,
+    .status,
+    .principle {
+      border-left: 4px solid var(--gold);
+      background: var(--warm);
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+
+    .principle {
+      background: var(--soft-blue);
+      border-left-color: var(--navy);
+    }
+
+    .principle p:last-child,
+    .note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .chain div {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 16px 10px;
+      text-align: center;
+      background: white;
+      color: var(--navy);
+      font-weight: 750;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: 21px;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contrast {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .questions li {
+      margin: .75rem 0;
+    }
+
+    .related {
+      margin-top: 3.5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      line-height: 2;
+    }
+
+    footer {
+      background: var(--warm);
+      padding: 25px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 34px;
+      }
+
+      .chain,
+      .grid,
+      .contrast {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/research/foundations/">
+    MERITOCRAT.ORG / RESEARCH FOUNDATIONS
+  </a>
+</header>
+
+<main>
+
+  <p class="eyebrow">Foundation 3</p>
+
+  <h1>Advantage Laundering</h1>
+
+  <p class="lede">
+    Economic advantage can change form without disappearing.
+    An advantage rooted in inheritance, networks, geography, or institutions
+    can help produce genuine later productivity, while the market reward for
+    that productivity records the present outcome rather than the full causal
+    history that produced it.
+  </p>
+
+  <div class="note">
+    <strong>Core idea:</strong>
+    Advantage laundering describes the loss of morally relevant causal
+    history as antecedent advantage is converted into apparently individual
+    market achievement.
+  </div>
+
+
+  <h2 id="definition">Definition</h2>
+
+  <p>
+    In the MPS framework, <strong>advantage laundering</strong> is the process
+    by which morally arbitrary advantages pass through ordinary market and
+    institutional mechanisms and emerge as outcomes that appear to be wholly
+    attributable to individual merit.
+  </p>
+
+  <p>
+    The concept is deliberately about <strong>provenance</strong>.
+    The original advantage is not necessarily visible in the final economic
+    outcome. What remains visible is the productivity, credential, promotion,
+    business success, income, or other result produced after the advantage has
+    passed through legitimate social and economic processes.
+  </p>
+
+  <p>
+    This is why the framework uses the language of laundering. The value of
+    the original advantage can persist while its causal history becomes
+    difficult to see.
+  </p>
+
+
+  <h2 id="mechanism">How the mechanism works</h2>
+
+  <p>
+    The argument can be reduced to a simple causal sequence:
+  </p>
+
+  <div class="chain" aria-label="Advantage laundering causal sequence">
+    <div>Antecedent Advantage</div>
+    <div>Capacity or Opportunity</div>
+    <div>Market Performance</div>
+    <div>Apparent Desert</div>
+  </div>
+
+  <p>
+    An antecedent advantage can improve access to resources, opportunities,
+    human-capital development, information, or institutions. Those conditions
+    can then contribute to real productive capacity. Market competition
+    evaluates the resulting capacity or output and assigns a reward.
+  </p>
+
+  <p>
+    At the final stage, the reward can look entirely meritocratic because the
+    market observes and prices the present productive characteristic rather
+    than separately identifying every causal input that helped create it.
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>
+        The claim is not that the final productivity is unreal.
+      </strong>
+    </p>
+    <p>
+      The claim is that real productivity can itself have mixed provenance.
+      Some of its causes may be attributable to agency, while others may
+      derive from advantages for which the recipient cannot claim personal
+      credit.
+    </p>
+  </div>
+
+
+  <h2 id="markets">Why legitimate markets can still obscure provenance</h2>
+
+  <p>
+    Advantage laundering does not require fraud, corruption, or an invalid
+    market transaction.
+  </p>
+
+  <p>
+    A labor market can accurately observe that one worker is currently more
+    productive than another. An investor can rationally choose the founder
+    who appears better positioned to execute a business plan. An employer can
+    select a candidate with stronger experience or more relevant skills.
+  </p>
+
+  <p>
+    None of those transactions, by itself, answers the historical question:
+    <em>How was the productive advantage being evaluated produced?</em>
+  </p>
+
+  <p>
+    In this sense, the provenance critique is compatible with the observation
+    that a market may correctly price present economic characteristics.
+    The additional question is whether the causal history of those
+    characteristics matters when the resulting reward is interpreted as
+    deserved.
+  </p>
+
+
+  <h2 id="channels">Illustrative channels</h2>
+
+  <p>
+    The source framework identifies several recurring channels through which
+    antecedent advantage can influence later economic outcomes.
+  </p>
+
+  <div class="grid">
+
+    <section class="card">
+      <h3>Intergenerational resources</h3>
+      <p>
+        Family resources can affect development through education,
+        financial transfers, access to well-resourced environments, and
+        capital available for later economic activity.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Network position</h3>
+      <p>
+        Social connections can affect access to employment opportunities,
+        mentorship, sponsorship, business relationships, and startup
+        capital.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Geographic and institutional conditions</h3>
+      <p>
+        The places and institutions surrounding development can affect
+        educational access, labor-market opportunity, professional
+        pathways, and the conditions under which capacities are formed.
+      </p>
+    </section>
+
+  </div>
+
+
+  <h2 id="wealth">Intergenerational advantage</h2>
+
+  <p>
+    Consider the transmission of family resources.
+    Developmental advantages can include access to education, better
+    resourced schools, social contacts, direct financial support, property
+    assistance, or business capital.
+  </p>
+
+  <p>
+    These inputs can help produce genuine skills and economically valuable
+    human capital. Later, when those skills receive a high market return,
+    the immediate explanation may simply be that the person is productive.
+  </p>
+
+  <p>
+    The provenance question goes one step further:
+    how much of the productive capacity arose from effort and cultivation
+    attributable to the person, and how much arose from antecedent conditions
+    that were already favorable?
+  </p>
+
+
+  <h2 id="networks">Network advantage</h2>
+
+  <p>
+    Economic opportunity can also depend on social position.
+    Networks can influence access to jobs, mentorship, sponsorship,
+    investment, and commercial relationships.
+  </p>
+
+  <p>
+    Once an opportunity has been obtained, the beneficiary may perform
+    exceptionally well. Advantage laundering does not deny that subsequent
+    performance. It asks whether access to the opportunity itself should be
+    treated as part of the outcome's provenance.
+  </p>
+
+  <div class="principle">
+    <p>
+      <strong>Opportunity and performance are analytically distinct.</strong>
+    </p>
+    <p>
+      A person can exercise substantial skill after receiving an advantage
+      in access. Provenance analysis attempts to preserve both facts rather
+      than forcing the outcome into an all-merit or no-merit classification.
+    </p>
+  </div>
+
+
+  <h2 id="geography">Geographic and institutional advantage</h2>
+
+  <p>
+    Geographic circumstances can shape the quality of schools, surrounding
+    labor markets, peer environments, institutional resources, and later
+    economic opportunity.
+  </p>
+
+  <p>
+    These conditions can become embedded in productive capacity long before
+    that capacity enters a market. Once the resulting skills are rewarded,
+    the geographic component of their causal history may no longer be visible
+    in the wage, profit, or market valuation.
+  </p>
+
+  <p>
+    The same analytical issue applies to institutional position.
+    Institutions can structure access, credentials, networks, information,
+    bargaining power, and opportunities in ways that later appear in market
+    outcomes as individual performance.
+  </p>
+
+
+  <h2 id="not-inequality">Advantage laundering is not a theory of inequality</h2>
+
+  <p>
+    The concept is narrower than the claim that unequal outcomes are unjust.
+  </p>
+
+  <p>
+    The MPS framework does not treat a large reward as evidence of laundering.
+    Nor does it require equal outcomes. A large economic return can remain
+    compatible with the framework when the return reflects genuine
+    contribution attributable to the person.
+  </p>
+
+  <p>
+    Advantage laundering concerns the <strong>source</strong> of an outcome,
+    not simply its size.
+  </p>
+
+  <div class="contrast">
+
+    <section class="card">
+      <h3>Legitimate reward</h3>
+      <p>
+        A return attributable to sustained effort, cultivated capacity,
+        innovation, creative judgment, entrepreneurial discovery, or other
+        genuine contribution.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Non-meritocratic component</h3>
+      <p>
+        The portion of an outcome causally attributable to antecedent
+        advantages that the beneficiary did not produce and for which
+        personal desert cannot simply be assumed.
+      </p>
+    </section>
+
+  </div>
+
+
+  <h2 id="mixed">Most outcomes have mixed provenance</h2>
+
+  <p>
+    The framework does not require labeling an entire economic outcome
+    either earned or unearned.
+  </p>
+
+  <p>
+    A successful outcome may simultaneously reflect substantial effort,
+    genuine skill, good judgment, inherited resources, favorable networks,
+    advantageous institutions, and geographic opportunity.
+  </p>
+
+  <p>
+    The analytical task is decomposition: identifying, to the extent
+    practicable, which causal components are meritocratic and which are
+    non-meritocratic.
+  </p>
+
+  <p>
+    This avoids a false binary in which acknowledging advantage would require
+    denying achievement, or acknowledging achievement would require ignoring
+    advantage.
+  </p>
+
+
+  <h2 id="not-saying">What the concept does not say</h2>
+
+  <ul class="questions">
+    <li>
+      It does not say that market exchange is itself illicit.
+    </li>
+
+    <li>
+      It does not say that every successful person is merely the product of
+      advantage.
+    </li>
+
+    <li>
+      It does not say that differences in reward must be eliminated.
+    </li>
+
+    <li>
+      It does not imply that genuine effort or innovation loses moral
+      significance when antecedent advantage is also present.
+    </li>
+
+    <li>
+      It does not require perfect reconstruction of every causal influence
+      on a person's economic position.
+    </li>
+
+    <li>
+      It concerns the provenance of economic outcomes rather than the
+      personal worth of the people receiving them.
+    </li>
+  </ul>
+
+
+  <h2 id="why-provenance">Why provenance changes the analysis</h2>
+
+  <p>
+    Without provenance, analysis begins with the outcome that exists now:
+    the wage, profit, credential, business position, or asset holding.
+  </p>
+
+  <p>
+    With provenance, the inquiry moves backward through the causal chain.
+    It asks which prior conditions helped produce the capacity or opportunity
+    that the market eventually rewarded.
+  </p>
+
+  <p>
+    This shift matters because market validation and moral attribution answer
+    different questions. A market transaction can establish that something
+    currently has economic value without establishing that every cause of that
+    value is attributable to the current recipient.
+  </p>
+
+
+  <h2 id="response">The MPS response</h2>
+
+  <p>
+    The proposed MPS response begins with
+    <strong>Provenance Auditing</strong>: tracing causal inputs to economic
+    outcomes to the extent practicable.
+  </p>
+
+  <p>
+    <strong>Advantage Indexing</strong> then represents the proposed effort
+    to estimate the portion of an economic return attributable to
+    non-meritocratic inputs.
+  </p>
+
+  <p>
+    Corrective mechanisms are intended, where possible, to operate on the
+    production of advantage itself through expanded access and structural
+    correction rather than treating every unequal final outcome as the
+    appropriate target.
+  </p>
+
+  <p>
+    At the same time, <strong>Incentive Preservation</strong> constrains the
+    framework: correction is directed toward non-meritocratic inputs rather
+    than suppressing rewards for genuine contribution.
+  </p>
+
+
+  <h2 id="limits">The measurement limit</h2>
+
+  <p>
+    Advantage laundering presents a difficult causal-inference problem.
+    Economic outcomes have many interacting causes, and the counterfactual
+    question is especially challenging: what would the outcome have been
+    without the antecedent advantage?
+  </p>
+
+  <p>
+    The MPS framework therefore does not claim that provenance can be
+    reconstructed perfectly. Its proposed approach is probabilistic and
+    explicitly incorporates uncertainty.
+  </p>
+
+  <div class="note">
+    <strong>Epistemic boundary:</strong>
+    Evidence that an advantage affected an outcome does not automatically
+    establish the precise size of that effect. Any institutional response
+    therefore depends on the reliability of the provenance assessment.
+  </div>
+
+
+  <h2 id="conclusion">The underlying claim</h2>
+
+  <div class="principle">
+    <p>
+      <strong>
+        Markets can legitimately reward real performance while remaining
+        incomplete as accounts of desert.
+      </strong>
+    </p>
+
+    <p>
+      When present performance partly reflects antecedent advantage, the
+      market reward records the value of the resulting capacity without
+      necessarily preserving the causal history that produced it.
+      Advantage laundering is the name this framework gives to that loss
+      of provenance.
+    </p>
+  </div>
+
+  <p>
+    The proposed remedy is therefore not to deny achievement and not to
+    eliminate markets. It is to restore causal history to the analysis so
+    meritocratic contribution and non-meritocratic advantage can be
+    distinguished rather than collapsed into a single market outcome.
+  </p>
+
+
+  <div class="status">
+    <strong>Status:</strong>
+    “Advantage laundering” is a concept defined within the MPS framework.
+    This page presents the framework's normative and causal argument rather
+    than an established economic or legal doctrine.
+  </div>
+
+
+  <nav class="related" aria-label="Research Foundations">
+    <strong>Continue through the foundations:</strong><br>
+
+    <a href="/research/foundations/why-provenance/">
+      Why Provenance?
+    </a>
+    ·
+
+    <a href="/research/foundations/merit-and-desert/">
+      Merit and Desert
+    </a>
+    ·
+
+    <a href="/research/foundations/advantage-laundering/"
+       aria-current="page">
+      Advantage Laundering
+    </a>
+    ·
+
+    <a href="/research/foundations/markets-and-incentives/">
+      Markets and Incentives
+    </a>
+    ·
+
+    <a href="/research/foundations/measurement-and-limits/">
+      Measurement and Limits
+    </a>
+    ·
+
+    <a href="/research/foundations/policy-law-regulation/">
+      Policy, Law and Regulation
+    </a>
+    ·
+
+    <a href="/research/foundations/glossary/">
+      Glossary
+    </a>
+  </nav>
+
+</main>
+
+<footer>
+  Research and proposed framework.
+  Not legal, financial, or investment advice.
+</footer>
+
+</body>
+</html>
