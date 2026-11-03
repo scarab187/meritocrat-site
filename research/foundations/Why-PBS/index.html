@@ -1,0 +1,1252 @@
+<!-- =========================================================
+     WHY PBS/MPS?
+     meritocrat.org content block
+     Self-contained styles + markup
+     ========================================================= -->
+
+<style>
+  .pbs-guide {
+    --gold: #C9982E;
+    --gold-light: #E8D48B;
+    --gold-dark: #A67B1E;
+    --navy: #1A2744;
+    --navy-light: #2A3D5E;
+    --ink: #1C1C1C;
+    --muted: #5F6672;
+    --warm: #F8F6F1;
+    --warm-dark: #EDE9E0;
+    --forest: #2D5F3E;
+    --white: #FFFFFF;
+    --border: #DED9CE;
+
+    color: var(--ink);
+    background: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.72;
+    font-size: 17px;
+  }
+
+  .pbs-guide *,
+  .pbs-guide *::before,
+  .pbs-guide *::after {
+    box-sizing: border-box;
+  }
+
+  .pbs-guide a {
+    color: inherit;
+  }
+
+  .pbs-container {
+    width: min(100% - 32px, 940px);
+    margin: 0 auto;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .pbs-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(201,152,46,.14), transparent 28%),
+      linear-gradient(145deg, #111B30 0%, #1A2744 58%, #203556 100%);
+    color: #fff;
+    padding: 92px 0 72px;
+  }
+
+  .pbs-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .pbs-brandline {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 31px;
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+  }
+
+  .pbs-leaf {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+  }
+
+  .pbs-eyebrow {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .pbs-hero h1 {
+    color: #fff;
+    margin: 0;
+    max-width: 830px;
+    line-height: 1.03;
+    font-size: clamp(2.7rem, 7vw, 5.4rem);
+    letter-spacing: -.055em;
+    font-weight: 820;
+  }
+
+  .pbs-hero h1 span {
+    color: var(--gold-light);
+  }
+
+  .pbs-subtitle {
+    max-width: 780px;
+    margin: 22px 0 0;
+    color: rgba(255,255,255,.86);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.48;
+    font-weight: 450;
+  }
+
+  .pbs-status {
+    margin-top: 34px;
+    max-width: 815px;
+    padding: 17px 20px;
+    border-left: 4px solid var(--gold);
+    background: rgba(255,255,255,.075);
+    color: rgba(255,255,255,.88);
+    font-size: .96rem;
+  }
+
+  .pbs-status strong {
+    color: var(--gold-light);
+  }
+
+  .pbs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 29px;
+  }
+
+  .pbs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 6px;
+    padding: 13px 20px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+
+  .pbs-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .pbs-btn-primary {
+    background: var(--gold);
+    color: var(--navy) !important;
+  }
+
+  .pbs-btn-primary:hover {
+    background: var(--gold-dark);
+  }
+
+  .pbs-btn-secondary {
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.04);
+  }
+
+  .pbs-btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,.09);
+  }
+
+  /* ---------- MAIN ---------- */
+
+  .pbs-main {
+    padding: 68px 0 84px;
+  }
+
+  .pbs-notice {
+    border: 1px solid rgba(201,152,46,.36);
+    border-left: 5px solid var(--gold);
+    background: var(--warm);
+    padding: 22px 24px;
+    margin-bottom: 60px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .pbs-notice strong {
+    color: var(--navy);
+  }
+
+  .pbs-section {
+    margin: 0 0 68px;
+    scroll-margin-top: 90px;
+  }
+
+  .pbs-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .pbs-overline {
+    margin: 0 0 7px;
+    color: var(--gold-dark);
+    font-size: .73rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  .pbs-section h2 {
+    position: relative;
+    margin: 0 0 27px;
+    padding-bottom: 15px;
+    color: var(--navy);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    line-height: 1.16;
+    letter-spacing: -.025em;
+  }
+
+  .pbs-section h2::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 58px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--gold);
+  }
+
+  .pbs-section h3 {
+    color: var(--navy);
+    font-size: 1.19rem;
+    line-height: 1.3;
+    margin: 31px 0 10px;
+  }
+
+  .pbs-section p {
+    margin: 0 0 19px;
+  }
+
+  .pbs-lead {
+    font-size: 1.18rem;
+    color: #303743;
+    line-height: 1.68;
+  }
+
+  .pbs-highlight {
+    margin: 30px 0;
+    padding: 27px 30px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background: rgba(201,152,46,.045);
+  }
+
+  .pbs-highlight-label {
+    display: block;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    font-size: .72rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .pbs-highlight p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- CONTENT NAV ---------- */
+
+  .pbs-toc {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 66px;
+  }
+
+  .pbs-toc-title {
+    color: var(--navy);
+    font-weight: 800;
+    margin: 0 0 15px;
+    font-size: 1rem;
+  }
+
+  .pbs-toc-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .pbs-toc a {
+    color: var(--navy) !important;
+    text-decoration: none;
+    font-size: .9rem;
+    border: 1px solid #d9d4c9;
+    background: #fff;
+    padding: 7px 11px;
+    border-radius: 999px;
+  }
+
+  .pbs-toc a:hover {
+    color: var(--gold-dark) !important;
+    border-color: var(--gold);
+  }
+
+  /* ---------- LISTS ---------- */
+
+  .pbs-list,
+  .pbs-number-list {
+    margin: 21px 0 27px;
+    padding-left: 1.45rem;
+  }
+
+  .pbs-list li,
+  .pbs-number-list li {
+    margin-bottom: 11px;
+    padding-left: 6px;
+  }
+
+  .pbs-list li::marker,
+  .pbs-number-list li::marker {
+    color: var(--gold-dark);
+    font-weight: 800;
+  }
+
+  .pbs-chain {
+    list-style: none;
+    margin: 26px 0 31px;
+    padding: 0;
+    counter-reset: chain;
+  }
+
+  .pbs-chain li {
+    position: relative;
+    counter-increment: chain;
+    margin: 0 0 12px;
+    padding: 15px 17px 15px 58px;
+    border: 1px solid #e3ded4;
+    border-radius: 7px;
+    background: #fff;
+  }
+
+  .pbs-chain li::before {
+    content: counter(chain);
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    color: var(--navy);
+    background: var(--gold-light);
+    font-size: .82rem;
+    font-weight: 850;
+  }
+
+  /* ---------- CARDS ---------- */
+
+  .pbs-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 18px;
+    margin: 25px 0 31px;
+  }
+
+  .pbs-card {
+    border: 1px solid #e1ddd3;
+    border-top: 3px solid var(--gold);
+    border-radius: 7px;
+    padding: 23px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(17,27,48,.045);
+  }
+
+  .pbs-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.06rem;
+  }
+
+  .pbs-card p {
+    margin: 0;
+    color: #414752;
+    font-size: .96rem;
+  }
+
+  .pbs-number {
+    color: var(--gold-dark);
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 850;
+    margin-bottom: 7px;
+  }
+
+  /* ---------- REQUIREMENTS ---------- */
+
+  .pbs-requirements {
+    counter-reset: requirement;
+    list-style: none;
+    margin: 28px 0 28px;
+    padding: 0;
+  }
+
+  .pbs-requirements li {
+    position: relative;
+    counter-increment: requirement;
+    margin-bottom: 12px;
+    padding: 16px 18px 16px 59px;
+    background: var(--warm);
+    border-left: 3px solid var(--gold);
+  }
+
+  .pbs-requirements li::before {
+    content: counter(requirement, decimal-leading-zero);
+    position: absolute;
+    left: 17px;
+    top: 16px;
+    color: var(--gold-dark);
+    font-size: .8rem;
+    font-weight: 850;
+    letter-spacing: .04em;
+  }
+
+  /* ---------- OBJECTIONS ---------- */
+
+  .pbs-objection {
+    border-bottom: 1px solid #e4e0d7;
+    padding: 0 0 25px;
+    margin: 0 0 25px;
+  }
+
+  .pbs-objection:last-child {
+    border-bottom: none;
+  }
+
+  .pbs-objection h3 {
+    margin-top: 0;
+  }
+
+  /* ---------- CLAIM LADDER ---------- */
+
+  .pbs-ladder {
+    margin: 27px 0 32px;
+    border-left: 3px solid var(--gold);
+    padding-left: 23px;
+  }
+
+  .pbs-level {
+    position: relative;
+    margin: 0 0 13px;
+    padding: 15px 18px;
+    border-radius: 6px;
+    background: var(--warm);
+  }
+
+  .pbs-level::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: var(--gold);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--gold);
+    border-radius: 50%;
+    left: -30px;
+    top: 21px;
+  }
+
+  .pbs-level strong {
+    color: var(--navy);
+  }
+
+  /* ---------- PILOT ---------- */
+
+  .pbs-pilot {
+    counter-reset: pilot;
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+  }
+
+  .pbs-pilot li {
+    counter-increment: pilot;
+    position: relative;
+    padding: 0 0 25px 54px;
+    margin: 0;
+  }
+
+  .pbs-pilot li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 38px;
+    bottom: 1px;
+    border-left: 2px solid #ddd4bf;
+  }
+
+  .pbs-pilot li::before {
+    content: counter(pilot);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-weight: 850;
+    border-radius: 50%;
+    background: var(--gold-light);
+    z-index: 2;
+  }
+
+  .pbs-pilot strong {
+    color: var(--navy);
+  }
+
+  /* ---------- BOTTOM CTA ---------- */
+
+  .pbs-read-paper {
+    padding: 54px 0;
+    color: #fff;
+    background: var(--navy);
+  }
+
+  .pbs-read-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 35px;
+    align-items: center;
+  }
+
+  .pbs-read-paper h2 {
+    margin: 0 0 11px;
+    color: #fff;
+    line-height: 1.18;
+    letter-spacing: -.025em;
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+  }
+
+  .pbs-read-paper p {
+    margin: 0;
+    color: rgba(255,255,255,.76);
+    max-width: 680px;
+  }
+
+  .pbs-footer-note {
+    padding: 24px 0 40px;
+    color: #6f7278;
+    background: #fff;
+    text-align: center;
+    font-size: .86rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+
+  @media (max-width: 760px) {
+    .pbs-guide {
+      font-size: 16px;
+    }
+
+    .pbs-container {
+      width: min(100% - 26px, 940px);
+    }
+
+    .pbs-hero {
+      padding: 72px 0 55px;
+    }
+
+    .pbs-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pbs-read-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .pbs-read-inner .pbs-btn {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pbs-guide *,
+    .pbs-guide *::before,
+    .pbs-guide *::after {
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<article class="pbs-guide">
+
+  <!-- HERO -->
+  <section class="pbs-hero">
+    <div class="pbs-container">
+
+      <div class="pbs-brandline">
+        <!-- Leaf / seedling mark adapted from meritocrat.org -->
+        <svg class="pbs-leaf" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M14 26V14" stroke="#C9982E" stroke-width="2.5" stroke-linecap="round"></path>
+          <path d="M14 18C14 18 8 16 6 11C6 11 10 9 14 14" stroke="#C9982E" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M14 14C14 14 20 12 22 7C22 7 18 5 14 10" stroke="#C9982E" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <span>MERITOCRAT.ORG &nbsp;|&nbsp; RESEARCH</span>
+      </div>
+
+      <div class="pbs-eyebrow">Third Working Paper</div>
+
+      <h1>Why <span>PBS/MPS?</span></h1>
+
+      <p class="pbs-subtitle">
+        A public guide to the requirements, alternatives, objections, and proof conditions
+      </p>
+
+      <div class="pbs-status">
+        <strong>Research status:</strong> Candidate institutional architecture.
+        Conceptually developed, but not yet proven operationally, economically,
+        legally, or at production scale.
+      </div>
+
+      <div class="pbs-actions">
+        <a class="pbs-btn pbs-btn-primary"
+           href="https://raw.githubusercontent.com/scarab187/meritocrat-org-docs/main/docs/8-why-pbs-mps.pdf"
+           target="_blank"
+           rel="noopener noreferrer">
+          Download the full working paper (PDF) ↗
+        </a>
+
+        <a class="pbs-btn pbs-btn-secondary" href="#pbs-overview">
+          Read the public guide ↓
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <main class="pbs-main">
+    <div class="pbs-container">
+
+      <div class="pbs-notice">
+        <strong>Research notice.</strong>
+        This page explains the argument in plain language. It does not claim that
+        PBS/MPS has regulatory approval, legal enforceability in a specific implementation,
+        peer-reviewed validation, or production-scale viability.
+      </div>
+
+      <nav class="pbs-toc" aria-label="Page contents">
+        <div class="pbs-toc-title">On this page</div>
+        <div class="pbs-toc-links">
+          <a href="#pbs-overview">The idea</a>
+          <a href="#pbs-problem">The problem</a>
+          <a href="#pbs-chain">The chain</a>
+          <a href="#pbs-proposal">What PBS/MPS proposes</a>
+          <a href="#pbs-requirements">Requirements</a>
+          <a href="#pbs-alternatives">Alternatives</a>
+          <a href="#pbs-objections">Objections</a>
+          <a href="#pbs-when-not">When not to use it</a>
+          <a href="#pbs-proof">Proof conditions</a>
+          <a href="#pbs-ladder">Claim ladder</a>
+          <a href="#pbs-pilot">Pilot</a>
+          <a href="#pbs-bottom-line">Bottom line</a>
+        </div>
+      </nav>
+
+
+      <!-- THE IDEA -->
+      <section class="pbs-section" id="pbs-overview">
+        <div class="pbs-overline">Overview</div>
+        <h2>The idea in one sentence</h2>
+
+        <p class="pbs-lead">
+          PBS/MPS is a proposed way to carry evidence of a person's contribution
+          through four connected stages: document the contribution, measure the
+          resulting performance, estimate attributable value, and connect that
+          value to a legally valid form of payment or participation.
+        </p>
+
+        <div class="pbs-highlight">
+          <span class="pbs-highlight-label">Central principle</span>
+          <p>
+            The paper's central point is deliberately cautious: a coherent idea is
+            not automatically a workable or superior system. PBS/MPS should earn
+            stronger claims only through comparison, adversarial testing, bounded
+            pilots, and independent replication.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- PROBLEM -->
+      <section class="pbs-section" id="pbs-problem">
+        <div class="pbs-overline">The design problem</div>
+        <h2>The problem the paper addresses</h2>
+
+        <p>
+          Modern value is often created by many people over time. Knowledge, data,
+          judgment, creative work, technical improvements, and operational expertise
+          can enter products, workflows, datasets, and AI systems. Those contributions
+          may continue producing value after the original contributor has left the
+          organization or no longer participates.
+        </p>
+
+        <p>
+          Existing institutions can handle corporate ownership and some recognized
+          forms of intellectual property. They are often less equipped to preserve
+          a detailed contribution record, connect that contribution to later outcomes,
+          and carry a valid entitlement across organizations and over time.
+        </p>
+
+        <p>
+          The paper calls this the <strong>intangible-assets dilemma</strong>. It does
+          not argue that every idea should become property or that every contribution
+          should be priced. Its claim is narrower. A provenance-based system may be
+          worth considering when a contribution is <strong>identifiable, material,
+          persistent, and connected to measurable downstream value.</strong>
+        </p>
+      </section>
+
+
+      <!-- CHAIN -->
+      <section class="pbs-section" id="pbs-chain">
+        <div class="pbs-overline">End-to-end integrity</div>
+        <h2>The chain that must remain intact</h2>
+
+        <p>A complete contribution-to-payment system needs every link below:</p>
+
+        <ol class="pbs-chain">
+          <li>A person or group produces knowledge, data, judgment, expression, feedback, or a process improvement.</li>
+          <li>The contribution is captured in an identifiable form.</li>
+          <li>The contribution enters a model, dataset, product, process, or workflow.</li>
+          <li>The downstream system produces a measurable result.</li>
+          <li>Evidence estimates whether and how the contribution affected that result.</li>
+          <li>A valid contract or law recognizes an entitlement.</li>
+          <li>A payment, royalty, license right, ownership interest, or PBS instrument carries that entitlement.</li>
+          <li>Privacy, correction, appeal, withdrawal, reuse, expiration, and disputes are governed by explicit procedures.</li>
+        </ol>
+
+        <div class="pbs-highlight">
+          <span class="pbs-highlight-label">Why every link matters</span>
+          <p>
+            If one link fails, the system is incomplete. Provenance without performance
+            does not establish value. Performance without provenance lacks contribution
+            history. Attribution without a legal entitlement does not create a right.
+            A right without payment infrastructure may not be executed. A market without
+            privacy, due process, and anti-manipulation controls may create more harm
+            than benefit.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- PROPOSAL -->
+      <section class="pbs-section" id="pbs-proposal">
+        <div class="pbs-overline">Architecture</div>
+        <h2>What PBS/MPS proposes</h2>
+
+        <div class="pbs-card-grid">
+
+          <div class="pbs-card">
+            <div class="pbs-number">01</div>
+            <h3>Provenance Ledger</h3>
+            <p>
+              The ledger preserves evidence of who contributed what, when, and in
+              what context. The purpose is not merely recordkeeping. The record must
+              be reliable enough to support review, correction, audit, and later analysis.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <div class="pbs-number">02</div>
+            <h3>Performance Oracle</h3>
+            <p>
+              The oracle supplies domain-appropriate evidence of outcomes. Different
+              domains require different measures. A useful metric must reflect a result
+              that affected parties and domain experts consider meaningful, rather than
+              relying only on credentials, reputation, or market price.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <div class="pbs-number">03</div>
+            <h3>Contribution Decomposition &amp; Royalty Flow</h3>
+            <p>
+              This layer asks how documented contributions relate to measured outcomes.
+              It must account for joint work, interaction effects, persistence over time,
+              uncertainty, and alternative causal assumptions. Any resulting allocation
+              then needs to be translated into an enforceable economic arrangement.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <div class="pbs-number">04</div>
+            <h3>Exchange or payment infrastructure</h3>
+            <p>
+              An exchange is not automatically required. Depending on the implementation,
+              the result could be a contractual royalty, license payment, revenue share,
+              cooperative interest, security, statutory entitlement, or another recognized
+              structure. If exchange infrastructure is used, it sits around the analytical
+              core and handles listing, transfer, settlement, reporting, and auditability.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- REQUIREMENTS -->
+      <section class="pbs-section" id="pbs-requirements">
+        <div class="pbs-overline">Decision criteria</div>
+        <h2>Ten requirements any adequate solution should meet</h2>
+
+        <p>
+          The paper does not assume PBS/MPS is the answer. It first asks what
+          <em>any</em> solution must do:
+        </p>
+
+        <ol class="pbs-requirements">
+          <li><strong>Persistent provenance:</strong> preserve origin, transformation, custody, and derivative relationships.</li>
+          <li><strong>Identity and evidence verification:</strong> separate supported claims from self-assertion.</li>
+          <li><strong>Joint-contribution representation:</strong> handle teams, prior work, shared inputs, and inseparable contributions without false precision.</li>
+          <li><strong>Measurable performance:</strong> connect contributions to relevant outcomes.</li>
+          <li><strong>Uncertainty-aware attribution:</strong> disclose confidence, approximation error, model sensitivity, and causal ambiguity.</li>
+          <li><strong>Legal enforceability:</strong> connect evidence to a valid right or obligation.</li>
+          <li><strong>Payment or market infrastructure:</strong> execute the entitlement without requiring speculative trading when a simpler payment method is enough.</li>
+          <li><strong>Privacy and due process:</strong> provide data minimization, access control, correction, appeal, and appropriate deletion or revocation.</li>
+          <li><strong>Incentive compatibility and anti-gaming:</strong> reward genuine quality while limiting collusion, metric gaming, contribution stuffing, and oracle capture.</li>
+          <li><strong>Acceptable administrative cost:</strong> leave positive value after verification, computation, compliance, disputes, governance, storage, and payment.</li>
+        </ol>
+
+        <p>
+          <strong>A simpler alternative should be preferred whenever it meets these
+          requirements more cheaply, fairly, or reliably.</strong>
+        </p>
+      </section>
+
+
+      <!-- ALTERNATIVES -->
+      <section class="pbs-section" id="pbs-alternatives">
+        <div class="pbs-overline">Comparative test</div>
+        <h2>Alternatives PBS/MPS must beat or complement</h2>
+
+        <p>
+          The paper compares PBS/MPS with existing and plausible approaches, including:
+        </p>
+
+        <ul class="pbs-list">
+          <li>conventional intellectual-property licensing;</li>
+          <li>employment and work-for-hire agreements;</li>
+          <li>collective or sectoral bargaining;</li>
+          <li>data trusts and cooperatives;</li>
+          <li>statutory AI-training royalties;</li>
+          <li>compulsory licensing;</li>
+          <li>expanded copyright or patent protection;</li>
+          <li>profit sharing and employee equity;</li>
+          <li>platform cooperatives;</li>
+          <li>collective rights organizations;</li>
+          <li>tokenized IP without contribution decomposition; and</li>
+          <li>taxation and redistribution.</li>
+        </ul>
+
+        <p>
+          These alternatives have real strengths. Licensing may be best when a clearly
+          recognized IP right already exists. Collective bargaining may avoid costly and
+          intrusive individual measurement. Profit sharing may be simpler within one firm.
+          Data trusts may provide stronger collective governance. Taxation may address
+          economy-wide concentration without tracing individual contributions.
+        </p>
+
+        <div class="pbs-highlight">
+          <span class="pbs-highlight-label">The actual comparative claim</span>
+          <p>
+            PBS/MPS is potentially distinctive only where four functions need to operate
+            together: <strong>persistent provenance, performance evidence, contribution
+            decomposition, and durable economic participation.</strong> Even there, the
+            system must demonstrate that integration produces more value than complexity.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- OBJECTIONS -->
+      <section class="pbs-section" id="pbs-objections">
+        <div class="pbs-overline">Adversarial review</div>
+        <h2>The strongest objections</h2>
+
+        <div class="pbs-objection">
+          <h3>Contribution inflation</h3>
+          <p>
+            People may exaggerate involvement or divide ordinary work into excessive
+            micro-contributions. Safeguards include materiality thresholds, independent
+            evidence, duplicate detection, and penalties for deliberate misrepresentation.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Tacit or undocumented knowledge</h3>
+          <p>
+            Important expertise may not be capturable in a reliable record. Structured
+            attestations may help, but weak evidence must not be converted into false
+            precision. Some domains may simply be unsuitable.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Joint work and unstable attribution</h3>
+          <p>
+            Team output may be genuinely inseparable. A responsible design must permit
+            team-level or coalition-level allocation and disclose when results change
+            materially under reasonable alternative models.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Oracle capture and metric gaming</h3>
+          <p>
+            Participants may optimize the metric instead of the real outcome, or powerful
+            parties may control the measurement system. Multi-source validation,
+            independent audits, holdout tests, anomaly detection, and governance
+            separation are required.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Workplace surveillance</h3>
+          <p>
+            Contribution tracking can become continuous monitoring. The framework should
+            use data minimization, purpose limitation, worker-controlled records, and
+            event-based evidence. It should reject implementations that require
+            disproportionate surveillance.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Privacy, correction, and deletion</h3>
+          <p>
+            Permanent records can conflict with legitimate rights to correct, restrict,
+            or delete data. Possible safeguards include off-chain sensitive records,
+            revocable permissions, append-only corrections, and independent appeal.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Administrative cost</h3>
+          <p>
+            Verification, computation, compliance, and disputes may consume the value
+            being distributed. All-in cost must be measured. Low-value domains may require
+            collective allocation, thresholds, a simpler institution, or no new right.
+          </p>
+        </div>
+
+        <div class="pbs-objection">
+          <h3>Speculation</h3>
+          <p>
+            A tradeable instrument may develop a market price disconnected from
+            contribution evidence. Entitlement value and secondary-market price must be
+            reported separately. Some implementations may require transfer limits,
+            suitability rules, circuit breakers, or non-tradeable royalty claims.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- WHEN NOT TO USE -->
+      <section class="pbs-section" id="pbs-when-not">
+        <div class="pbs-overline">Refusal principle</div>
+        <h2>When the system should not be used</h2>
+
+        <p>PBS/MPS should be rejected or narrowed for a domain when:</p>
+
+        <ul class="pbs-list">
+          <li>provenance cannot meet a minimum evidence standard;</li>
+          <li>meaningful performance cannot be observed;</li>
+          <li>attribution changes materially under reasonable models;</li>
+          <li>no valid or socially defensible entitlement exists;</li>
+          <li>privacy costs are disproportionate;</li>
+          <li>manipulation cannot be detected reliably;</li>
+          <li>administration consumes too much of the value; or</li>
+          <li>a simpler alternative performs just as well or better.</li>
+        </ul>
+
+        <p>
+          Possible substitutes include ordinary licensing, collective bargaining,
+          flat royalties, profit sharing, cooperatives, taxation, or no additional
+          economic right.
+        </p>
+      </section>
+
+
+      <!-- PROOF -->
+      <section class="pbs-section" id="pbs-proof">
+        <div class="pbs-overline">Empirical burden</div>
+        <h2>What would count as proof?</h2>
+
+        <p>
+          The paper proposes proof conditions rather than relying on persuasive language.
+        </p>
+
+        <div class="pbs-card-grid">
+
+          <div class="pbs-card">
+            <h3>Provenance integrity</h3>
+            <p>
+              Independent auditors should be able to reconstruct contribution chains,
+              while missing evidence, duplicate claims, false claims, and disputes are measured.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Performance validity</h3>
+            <p>
+              The chosen metrics should correlate with outcomes that affected parties and
+              domain experts accept as relevant, including out-of-sample validation and drift testing.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Attribution robustness</h3>
+            <p>
+              Allocations should remain reasonably stable across defensible models,
+              counterfactuals, metrics, and random seeds. Confidence intervals and
+              sensitivity ranges should be public.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Manipulation resistance</h3>
+            <p>
+              Red teams should test collusion, synthetic contributions, identity attacks,
+              oracle manipulation, and strategic fragmentation.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Scalability</h3>
+            <p>
+              Load tests should measure throughput, latency, storage, computation,
+              reconciliation, audit effort, and cost as the number of records and contributors grows.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Privacy and due process</h3>
+            <p>
+              A data-protection impact assessment should test whether minimum necessary
+              data can support attribution. Appeals, reversals, resolution time, and
+              repeat disputes should be tracked.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Economic viability</h3>
+            <p>
+              Net contributor benefit must remain positive after all verification,
+              compute, compliance, dispute, payment, and governance costs.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Legal operability</h3>
+            <p>
+              The selected right and obligation must be defined in counsel-reviewed
+              agreements or applicable law, and tested against termination, bankruptcy,
+              audit, and enforcement scenarios.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Comparative superiority</h3>
+            <p>
+              PBS/MPS should be tested against the strongest credible alternative under
+              the same participants, value pool, and outcome period where feasible.
+            </p>
+          </div>
+
+          <div class="pbs-card">
+            <h3>Replication</h3>
+            <p>
+              An independent operator or second site should reproduce the result before
+              claims are generalized to another domain.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- CLAIM LADDER -->
+      <section class="pbs-section" id="pbs-ladder">
+        <div class="pbs-overline">Evidence-based language</div>
+        <h2>The claim ladder</h2>
+
+        <p>
+          Public claims should match the highest level actually supported by evidence:
+        </p>
+
+        <div class="pbs-ladder">
+          <div class="pbs-level">
+            <strong>Level 0 — Specified:</strong>
+            architecture, data, models, rights, and failure conditions are defined.
+          </div>
+
+          <div class="pbs-level">
+            <strong>Level 1 — Prototype viable:</strong>
+            an end-to-end implementation works on bounded test data.
+          </div>
+
+          <div class="pbs-level">
+            <strong>Level 2 — Pilot credible:</strong>
+            real participants and outcomes are handled with measured error, privacy,
+            disputes, and cost.
+          </div>
+
+          <div class="pbs-level">
+            <strong>Level 3 — Comparatively preferable:</strong>
+            the system materially outperforms a credible alternative.
+          </div>
+
+          <div class="pbs-level">
+            <strong>Level 4 — Replicated:</strong>
+            independent operators reproduce the result.
+          </div>
+
+          <div class="pbs-level">
+            <strong>Level 5 — Production viable:</strong>
+            the system sustains scale, adversarial pressure, compliance, governance
+            integrity, and positive net economics over time.
+          </div>
+        </div>
+
+        <div class="pbs-highlight">
+          <span class="pbs-highlight-label">Language discipline</span>
+          <p>
+            Terms such as <strong>unique solution</strong>,
+            <strong>demonstrably viable</strong>, and
+            <strong>production-ready</strong> belong at Levels 3 through 5,
+            not at the conceptual stage.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- PILOT -->
+      <section class="pbs-section" id="pbs-pilot">
+        <div class="pbs-overline">Next empirical step</div>
+        <h2>A responsible pilot</h2>
+
+        <p>
+          The paper recommends a bounded pilot designed to falsify the framework,
+          not a general market launch:
+        </p>
+
+        <ol class="pbs-pilot">
+          <li>
+            <strong>Pre-register the test.</strong>
+            Select a narrow contribution type, a comparator, metrics, attribution
+            models, privacy rules, dispute procedures, cost accounting, and stop conditions.
+          </li>
+
+          <li>
+            <strong>Run in shadow mode.</strong>
+            Calculate provenance, performance, and allocation without binding economic
+            consequences. Compare results with expert review and conventional contractual allocation.
+          </li>
+
+          <li>
+            <strong>Use a capped payment pool.</strong>
+            Introduce limited real payments or royalties without unrestricted secondary speculation.
+          </li>
+
+          <li>
+            <strong>Invite adversarial testing.</strong>
+            Independent teams attack identity, provenance, oracle inputs, attribution, and governance.
+          </li>
+
+          <li>
+            <strong>Apply the decision rule.</strong>
+            Continue only if the system materially beats the comparator and triggers no stop condition.
+          </li>
+
+          <li>
+            <strong>Replicate.</strong>
+            Repeat under an independent operator or at a second site before expanding.
+          </li>
+        </ol>
+      </section>
+
+
+      <!-- BOTTOM LINE -->
+      <section class="pbs-section" id="pbs-bottom-line">
+        <div class="pbs-overline">Conclusion</div>
+        <h2>Bottom line</h2>
+
+        <p class="pbs-lead">
+          PBS/MPS is not presented in this paper as an inevitable or proven answer.
+          It is presented as a serious candidate for problems that require provenance,
+          performance evidence, uncertain joint attribution, and durable economic
+          participation to work together.
+        </p>
+
+        <p>
+          Its strongest contribution is not a declaration of success. It is a testable
+          standard for deciding when the framework deserves to proceed, when it should
+          be combined with simpler institutions, and when it should be rejected.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+
+  <!-- FULL PAPER CTA -->
+  <section class="pbs-read-paper">
+    <div class="pbs-container pbs-read-inner">
+
+      <div>
+        <div class="pbs-eyebrow">Third working paper</div>
+        <h2>Read the complete paper</h2>
+        <p>
+          The full working paper includes the detailed alternatives matrices,
+          failure conditions, proof dimensions, pilot design, decision rule,
+          and research-status notice.
+        </p>
+      </div>
+
+      <div>
+        <a class="pbs-btn pbs-btn-primary"
+           href="https://raw.githubusercontent.com/scarab187/meritocrat-org-docs/main/docs/8-why-pbs-mps.pdf"
+           target="_blank"
+           rel="noopener noreferrer">
+          Download the PDF ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="pbs-footer-note">
+    <div class="pbs-container">
+      <em>Research and proposed framework. Not legal, financial, or investment advice.</em>
+    </div>
+  </footer>
+
+</article>
