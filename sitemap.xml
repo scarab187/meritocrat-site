@@ -1,133 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://meritocrat.org/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/pbs/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/mps/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/provenance-ledger/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/performance-oracle/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/contribution-decomposition/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/exchange-protocol/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/washington-pbs-act/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/dfi-regulatory-history/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/risk-capital-test/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/research/</loc>
+    <loc>https://meritocrat.org/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/</loc>
+    <loc>https://meritocrat.org/why-pbs.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/why-provenance/</loc>
+    <loc>https://meritocrat.org/contribution-decomposition/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/merit-and-desert/</loc>
+    <loc>https://meritocrat.org/dfi-regulatory-history/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/advantage-laundering/</loc>
+    <loc>https://meritocrat.org/exchange-protocol/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/markets-and-incentives/</loc>
+    <loc>https://meritocrat.org/mps/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/measurement-and-limits/</loc>
+    <loc>https://meritocrat.org/patent-claims/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/policy-law-regulation/</loc>
+    <loc>https://meritocrat.org/pbs-lifecycle/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/glossary/</loc>
+    <loc>https://meritocrat.org/pbs/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/equal-performance-and-desert/</loc>
+    <loc>https://meritocrat.org/performance-oracle/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/pbs-lifecycle/</loc>
-  </url>
-    <url>
-    <loc>https://meritocrat.org/research/foundations/research-foundations/</loc>
+    <loc>https://meritocrat.org/provenance-ledger/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/institutional-design/</loc>
+    <loc>https://meritocrat.org/risk-capital-test/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/patent-claims/</loc>
+    <loc>https://meritocrat.org/washington-pbs-act/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/evidence-status/</loc>
-  </url>
-  
-  <url>
-    <loc>https://meritocrat.org/research/foundations/attribution-and-ownership/</loc>
-  </url>
-  
-  <url>
-    <loc>https://meritocrat.org/research/foundations/failure-conditions/</loc>
-  </url>
-
-  <url>
-    <loc>https://meritocrat.org/research/foundations/comparative-theory/</loc>
+    <loc>https://meritocrat.org/research/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/Why-PBS/</loc>
+    <loc>https://meritocrat.org/research/foundations/index.html</loc>
+  </url>
+   <url>
+    <loc>https://meritocrat.org/research/foundations/Why-PBS/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/sandbox-under-construction/</loc>
+    <loc>https://meritocrat.org/research/foundations/advantage-laundering/index.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/research/foundations/rawls-nozic-reconciled/</loc>
+    <loc>https://meritocrat.org/research/foundations/institutional-design/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/markets-and-incentives/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/measurement-and-limits/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/merit-and-desert/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/policy-law-regulation/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/why-provenance/index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/advantage-laundering.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/attribution-and-ownership.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/comparative-theory-map.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/economics-of-institutional-memory.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/equal-performance-and-desert.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/evidence-before-entitlement.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/evidence-status.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/failure-conditions.html</loc>
   </url>
   <url>
     <loc>https://meritocrat.org/research/foundations/foundations.html</loc>
   </url>
-  
   <url>
-    <loc>https://meritocrat.org/research/evidence-before-entitlement.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://meritocrat.org/research/economics-of-institutional-memory.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://meritocrat.org/research/markets-need-memory.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://meritocrat.org/research/rights-of-the-recorded-contributor.html</loc>
+    <loc>https://meritocrat.org/research/foundations/glossary.html</loc>
   </url>
   <url>
-    <loc>https://meritocrat.org/why-pbs.html/</loc>
+    <loc>https://meritocrat.org/research/foundations/institutional-design.html</loc>
   </url>
-
+  <url>
+    <loc>https://meritocrat.org/research/foundations/logic-pages-index.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/markets-and-incentives.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/markets-need-memory.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/measurement-and-limits.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/merit-and-desert.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/policy-law-regulation.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/rawls-nozick-reconciled.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/rights-of-the-recorded-contributor.html</loc>
+  </url>
+  <url>
+    <loc>https://meritocrat.org/research/foundations/why-provenance.html</loc>
+  </url>
 </urlset>
